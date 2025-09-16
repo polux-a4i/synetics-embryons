@@ -49,6 +49,25 @@ export const Synetics = definePreset(Aura, {
                         }
                     }
                 }
+            },
+            extend: {
+                accent: {
+                    color: '#f59e0b',
+                    inverseColor: '#ffffff'
+                }
+            },
+            css: ({ dt }) => `
+                .p-button-accent {
+                    background: ${dt('button.accent.color')};
+                    color: ${dt('button.accent.inverse.color')};
+                    transition-duration: ${dt('my.transition.fast')};
+                }
+            `
+        },
+        card: {
+            root: {
+                borderRadius: '3rem 1rem 3rem 1rem',
+                shadow: '0'
             }
         }
     }

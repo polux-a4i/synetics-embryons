@@ -1,0 +1,15 @@
+.app-wrapper {
+    height: 100dvh;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
+
+    .app-main ::ng-deep router-outlet + * {
+        display: block;
+        height: 100%;
+
+        main {
+            height: 100%;
+        }
+    }
+}
