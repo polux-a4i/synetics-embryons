@@ -9,8 +9,22 @@
         </ng-template>
 
         <div class="flow">
-            <h1>Welcome to ET APP</h1>
-            <p>Use the fields below to log in to the application</p>
+            <div class="text-center">
+                <h1>Welcome to ET APP</h1>
+                <p>Use the fields below to log in to the application</p>
+            </div>
+
+            <form action="">
+                <p-floatlabel variant="on">
+                    <input pInputText id="username" size="small" />
+                    <label for="username">Login</label>
+                </p-floatlabel>
+
+                <p-floatlabel variant="on">
+                    <input pInputText id="password" type="password" size="small" />
+                    <label for="password">Password</label>
+                </p-floatlabel>
+            </form>
 
             <p-button [class]="'p-button-block'" size="large" label="Check" />
         </div>
