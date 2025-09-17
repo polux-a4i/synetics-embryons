@@ -1,4 +1,24 @@
 nav {
     padding-inline: 4rem;
     padding-block: 2rem;
+
+    &:not(.has-bg) {
+        position: fixed;
+        top: 0;
+        inset-inline: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    &.has-bg {
+        color: var(--p-surface-0);
+        background-color: var(--p-primary-800);
+    }
+
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.6rem;
+    }
 }

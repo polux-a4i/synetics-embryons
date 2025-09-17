@@ -45,7 +45,15 @@ export const Synetics = definePreset(Aura, {
                             borderColor: '{primary.800}',
                             focusRing: {
                                 color: '{primary.800}'
-                            }
+                            },
+                        },
+                    },
+                    outlined: {
+                        secondary: {
+                            borderColor: '{surface.0}',
+                            color: '{surface.0}',
+                            activeBackground: 'transparent',
+                            hoverBackground: '{primary.700}',
                         }
                     }
                 }
