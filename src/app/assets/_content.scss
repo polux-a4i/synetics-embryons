@@ -1,0 +1,221 @@
+@use 'media';
+
+:root {
+    // Families
+    --font-base: "Red Hat Display", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-body: var(--font-base);
+    --font-heading: var(--font-body);
+
+    // Headings
+    --h1-size: 1.6em;
+    --h1-weight: 700;
+    --h2-size: 1.4em;
+    --h2-weight: 700;
+    --h3-size: 1.2em;
+    --h3-weight: 700;
+    --h4-size: 1em;
+    --h4-weight: 700;
+    --h5-size: .9em;
+    --h5-weight: 700;
+
+    // Body
+    --body-regular-size: .9em;
+    --body-regular-weight: 400;
+    --body-small-size: .9em;
+    --body-small-weight: 400;
+}
+
+@include media.md {
+    :root {
+        // Headings
+        --h1-size: 1.8em;
+        --h1-weight: 700;
+        --h2-size: 1.6em;
+        --h2-weight: 700;
+        --h3-size: 1.4em;
+        --h3-weight: 700;
+        --h4-size: 1.2em;
+        --h4-weight: 700;
+        --h5-size: 1em;
+        --h5-weight: 700;
+
+        // Body
+        --body-regular-size: 1em;
+        --body-regular-weight: 400;
+        --body-small-size: 1em;
+        --body-small-weight: 400;
+    }
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--p-primary-800);
+}
+
+@mixin make-h1() {
+    margin: 0;
+    font-size: var(--h1-size);
+    font-weight: var(--h1-weight);
+    font-family: var(--font-heading);
+}
+
+@mixin make-h2() {
+    margin: 0;
+    font-size: var(--h2-size);
+    font-weight: var(--h2-weight);
+    font-family: var(--font-heading);
+}
+
+@mixin make-h3() {
+    margin: 0;
+    font-size: var(--h3-size);
+    font-weight: var(--h3-weight);
+    font-family: var(--font-heading);
+}
+
+@mixin make-h4() {
+    margin: 0;
+    font-size: var(--h4-size);
+    font-weight: var(--h4-weight);
+    font-family: var(--font-heading);
+}
+
+@mixin make-h5() {
+    margin: 0;
+    font-size: var(--h5-size);
+    font-weight: var(--h5-weight);
+    font-family: var(--font-heading);
+}
+
+@mixin make-paragraph() {
+    margin: 0;
+    font-size: var(--body-regular-size);
+    font-weight: var(--body-regular-weight);
+    font-family: var(--font-body);
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+@mixin make-list() {
+    display: grid;
+    gap: .75em;
+    font-weight: var(--body-regular-weight);
+}
+
+@mixin make-table() {
+    display: grid;
+    gap: 1em;
+    font-weight: var(--body-regular-weight);
+    border-collapse: collapse;
+
+    tr:first-child {
+        th, td {
+            font-weight: 700;
+            background-color: var(--gray-50);
+        }
+    }
+
+    td {
+        font-weight: var(--body-regular-weight);
+    }
+
+    th, td {
+        padding: 1rem;
+        border: 1px solid var(--gray-50);
+    }
+
+    ul, ol {
+        gap: .33em;
+        padding-inline-start: 1em;
+    }
+}
+
+@mixin make-spacing() {
+    --spacing: .5em;
+
+    & > * + * {
+        margin-top: var(--spacing) !important;
+    }
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+}
+
+.content {
+    @include make-spacing;
+
+    &.leading-large {
+        --spacing: 2em;
+    }
+
+    h1 {
+        @include make-h1;
+    }
+
+    h2 {
+        @include make-h2;
+    }
+
+    h3 {
+        @include make-h3;
+    }
+
+    h4 {
+        @include make-h4;
+    }
+
+    h5 {
+        @include make-h5;
+    }
+
+    p {
+        @include make-paragraph;
+    }
+
+    ul,
+    ol {
+        @include make-list;
+    }
+
+    table {
+        @include make-table;
+    }
+}
+
+.heading-1,
+.content .heading-1 {
+    @include make-h1;
+}
+
+.heading-2,
+.content .heading-2 {
+    @include make-h2;
+}
+
+.heading-3,
+.content .heading-3 {
+    @include make-h3;
+}
+
+.heading-4,
+.content .heading-4 {
+    @include make-h4;
+}
+
+.heading-5,
+.content .heading-5 {
+    @include make-h5;
+}
+
+.paragraph,
+.content .paragraph {
+    @include make-paragraph;
+}
+
+.o-list,
+.u-list {
+    @include make-list;
+}

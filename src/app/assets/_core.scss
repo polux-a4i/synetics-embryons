@@ -1,0 +1,15 @@
+// Grid and fixes
+@use './core/grid';
+@use './core/visibility';
+
+html {
+    box-sizing: border-box;
+    -ms-overflow-style: scrollbar;
+    -webkit-overflow-scrolling: touch;
+}
+
+html *,
+html *::before,
+html *::after {
+    box-sizing: border-box;
+}

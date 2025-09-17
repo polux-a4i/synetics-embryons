@@ -1,32 +1,36 @@
 <main>
-    <p-card>
-        <ng-template #header>
-            <div class="card-icon">
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M33.111 9.26637C33.0679 8.31928 33.0679 7.41525 33.0679 6.51121C33.0679 5.77937 32.5083 5.21973 31.7764 5.21973C26.3953 5.21973 22.3056 3.66996 18.9047 0.355157C18.3881 -0.118386 17.6132 -0.118386 17.0966 0.355157C13.6957 3.66996 9.60604 5.21973 4.22487 5.21973C3.49303 5.21973 2.93339 5.77937 2.93339 6.51121C2.93339 7.41525 2.93339 8.31928 2.89034 9.26637C2.71814 18.3067 2.45985 30.7049 17.5702 35.9139L18.0007 36L18.4311 35.9139C33.4984 30.7049 33.2832 18.3498 33.111 9.26637ZM16.9675 21.7937C16.7092 22.009 16.4078 22.1381 16.0634 22.1381H16.0204C15.676 22.1381 15.3316 21.9659 15.1163 21.7076L11.1128 17.2735L13.05 15.5516L16.1926 19.0386L23.1666 12.409L24.9316 14.3031L16.9675 21.7937Z" fill="#004F71"/>
-                </svg>
+    <div class="inner">
+        <p-card>
+            <ng-template #header>
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M33.111 9.26637C33.0679 8.31928 33.0679 7.41525 33.0679 6.51121C33.0679 5.77937 32.5083 5.21973 31.7764 5.21973C26.3953 5.21973 22.3056 3.66996 18.9047 0.355157C18.3881 -0.118386 17.6132 -0.118386 17.0966 0.355157C13.6957 3.66996 9.60604 5.21973 4.22487 5.21973C3.49303 5.21973 2.93339 5.77937 2.93339 6.51121C2.93339 7.41525 2.93339 8.31928 2.89034 9.26637C2.71814 18.3067 2.45985 30.7049 17.5702 35.9139L18.0007 36L18.4311 35.9139C33.4984 30.7049 33.2832 18.3498 33.111 9.26637ZM16.9675 21.7937C16.7092 22.009 16.4078 22.1381 16.0634 22.1381H16.0204C15.676 22.1381 15.3316 21.9659 15.1163 21.7076L11.1128 17.2735L13.05 15.5516L16.1926 19.0386L23.1666 12.409L24.9316 14.3031L16.9675 21.7937Z" fill="#004F71"/>
+                    </svg>
+                </div>
+            </ng-template>
+
+            <div>
+                <div class="content text-center">
+                    <h1>Welcome to ET APP</h1>
+                    <p>Use the fields below to log in to the application</p>
+                </div>
+
+                <form action="" class="grid grid-cols-1 gap-2">
+                    <p-floatlabel variant="over">
+                        <input pInputText id="username" size="small" />
+                        <label for="username">Login</label>
+                    </p-floatlabel>
+
+                    <p-floatlabel variant="over">
+                        <input pInputText id="password" type="password" size="small" />
+                        <label for="password">Password</label>
+                    </p-floatlabel>
+
+                    <div>
+                        <p-button [class]="'p-button-block'" type="submit" size="large" label="Connect" />
+                    </div>
+                </form>
             </div>
-        </ng-template>
-
-        <div class="flow">
-            <div class="text-center">
-                <h1>Welcome to ET APP</h1>
-                <p>Use the fields below to log in to the application</p>
-            </div>
-
-            <form action="">
-                <p-floatlabel variant="on">
-                    <input pInputText id="username" size="small" />
-                    <label for="username">Login</label>
-                </p-floatlabel>
-
-                <p-floatlabel variant="on">
-                    <input pInputText id="password" type="password" size="small" />
-                    <label for="password">Password</label>
-                </p-floatlabel>
-            </form>
-
-            <p-button [class]="'p-button-block'" size="large" label="Check" />
-        </div>
-    </p-card>
+        </p-card>
+    </div>
 </main>

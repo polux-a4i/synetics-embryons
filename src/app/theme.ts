@@ -68,6 +68,37 @@ export const Synetics = definePreset(Aura, {
             root: {
                 borderRadius: '3rem 1rem 3rem 1rem',
                 shadow: '0'
+            },
+            body: {
+                padding: '3rem 1.5rem',
+            },
+            colorScheme: {
+                light: {
+                    root: {
+                        color: '{primary.800}'
+                    }
+                }
+            }
+        },
+        inputtext: {
+            colorScheme: {
+                light: {
+                    root: {
+                        placeholderColor: '{primary.800}',
+                        background: '{slate.100}',
+                        borderColor: '{slate.100}',
+                        borderRadius: '.5rem'
+                    }
+                }
+            }
+        },
+        floatlabel: {
+            colorScheme: {
+                light: {
+                    root: {
+                        color: '{primary.800}'
+                    }
+                }
             }
         }
     }

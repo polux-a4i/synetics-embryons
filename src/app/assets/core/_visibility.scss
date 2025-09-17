@@ -1,0 +1,29 @@
+@use "sass:map";
+@use '../breakpoints';
+
+@each $bp, $value in breakpoints.$config {
+    $bp-min: map.get($value, 'min');
+    $bp-max: map.get($value, 'max');
+
+    @if $bp-min {
+        @media screen and (width >= $bp-min) {
+            .#{$bp}\:hidden {
+                display: none !important;
+            }
+            .#{$bp}\:visible {
+                display: revert !important;
+            }
+        }
+    }
+
+    @if $bp-max {
+        @media screen and (width < $bp-max) {
+            .#{$bp}\:hidden {
+                display: none !important;
+            }
+            .#{$bp}\:visible {
+                display: revert !important;
+            }
+        }
+    }
+}

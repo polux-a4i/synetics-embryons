@@ -1,8 +1,41 @@
 main {
+    position: relative;
+    padding-inline: 2rem;
+    background-color: var(--p-primary-800);
     background-image: url('https://picsum.photos/id/85/1800/1200');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     display: grid;
     place-items: center;
+    isolation: isolate;
+
+    .inner {
+        width: 100%;
+        max-width: 54ch;
+    }
+
+    form {
+        margin-top: 2em;
+    }
+
+    &::after {
+        display: block;
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-color: var(--p-primary-800);
+        background: var(--p-primary-800);
+        background: linear-gradient(
+            145deg,
+            var(--p-primary-950) 0%,
+            var(--p-primary-500) 50%,
+            var(--p-primary-950) 100%
+        );
+        mix-blend-mode: multiply;
+        opacity: .6;
+    }
 }
