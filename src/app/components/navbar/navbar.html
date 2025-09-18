@@ -1,6 +1,6 @@
 <nav
     [class]="{
-        'has-bg': hasBackground()
+        'has-bg': !hideMenu
     }"
 >
     <div class="container">
@@ -11,8 +11,48 @@
                 </svg>
             </div>
 
+            @if (!hideMenu) {
+                <menu>
+                    <li>
+                        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/collections" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Collections
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/embryos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Embryos
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/females" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Females
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/straws" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Straws management
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/invoicing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Invoicing
+                        </a>
+                    </li>
+                </menu>
+            }
+
             <div>
-                <p-button size="large" label="Connect" variant="outlined" severity="secondary" />
+                <p-button
+                    size="large"
+                    label="Connect"
+                    [variant]="hideMenu ? 'outlined' : undefined"
+                    [severity]="hideMenu ? 'secondary': 'primary'"
+                />
             </div>
         </div>
     </div>
