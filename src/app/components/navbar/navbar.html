@@ -47,12 +47,14 @@
             }
 
             <div>
-                <p-button
-                    size="large"
-                    label="Connect"
-                    [variant]="hideMenu ? 'outlined' : undefined"
-                    [severity]="hideMenu ? 'secondary': 'primary'"
-                />
+                @if (hideMenu) {
+                    <p-button
+                        size="large"
+                        label="Connect"
+                        variant="outlined"
+                        severity="secondary"
+                    />
+                }
             </div>
         </div>
     </div>
