@@ -1,3 +1,197 @@
 <main>
-    test
+    <div class="container">
+        <p-tabs value="collection-info">
+            <p-tablist>
+                <p-tab value="collection-info">
+                    <div class="heading-5">
+                        Collection information
+                    </div>
+
+                    <small>
+                        Last edit <time datetime="10.10.2024">10.10.2024</time>
+                    </small>
+                </p-tab>
+                <p-tab value="collection-before-opu">
+                    <div class="heading-5">
+                        Before OPU
+                    </div>
+
+                    <small>
+                        Last edit <time datetime="10.10.2024">10.10.2024</time>
+                    </small>
+                </p-tab>
+                <p-tab value="collection-opu-ivm">
+                    <div class="heading-5">
+                        OPU/IVM
+                    </div>
+
+                    <small>
+                        Last edit <time datetime="10.10.2024">10.10.2024</time>
+                    </small>
+                </p-tab>
+                <p-tab value="collection-ivf">
+                    <div class="heading-5">
+                        IVF
+                    </div>
+
+                    <small>
+                        Last edit <time datetime="10.10.2024">10.10.2024</time>
+                    </small>
+                </p-tab>
+                <p-tab value="collection-post-fert">
+                    <div class="heading-5">
+                        Post-fertilization
+                    </div>
+
+                    <small>
+                        Last edit <time datetime="10.10.2024">10.10.2024</time>
+                    </small>
+                </p-tab>
+                <p-tab value="collection-report">
+                    <div class="heading-5">
+                        Collection report
+                    </div>
+
+                    <small>
+                        Last edit <time datetime="10.10.2024">10.10.2024</time>
+                    </small>
+                </p-tab>
+                <p-tab value="collection-embryos">
+                    <div class="heading-5">
+                        Collection embryos
+                    </div>
+
+                    <small>
+                        Last edit <time datetime="10.10.2024">10.10.2024</time>
+                    </small>
+                </p-tab>
+            </p-tablist>
+            <p-tabpanels>
+                <p-tabpanel value="collection-info">
+                    <header class="tab-header">
+                        <h2 class="heading-3">
+                            <span class="picon picon-collection"></span>
+                            Collection information
+                        </h2>
+                    </header>
+
+                    <form action="#">
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <!-- Line 1 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="collection-number" type="collection-number" size="small" />
+                                    <label for="collection-number">Collection number</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="operators" [(ngModel)]="selectedOperator" id="collection-operator" name="collection-operator" optionLabel="name" />
+                                    <label for="collection-operator">Collection operator</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="collection-nature" type="collection-nature" size="small" />
+                                    <label for="collection-nature">Collection nature</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 2 -->
+                            <div class="md:col-8">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="types" [(ngModel)]="selectedType" id="collection-type" name="collection-type" optionLabel="name" />
+                                    <label for="collection-type">Collection type</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-datepicker [(ngModel)]="collectionDate" name="collection-date" [iconDisplay]="'input'" [showIcon]="true">
+                                        <ng-template #inputicon let-clickCallBack="clickCallBack">
+                                            <span class="picon picon-calendar" (click)="clickCallBack($event)"></span>
+                                        </ng-template>
+                                    </p-datepicker>
+                                    <label for="collection-date">Collection date</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <!-- Line 3 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-autocomplete [(ngModel)]="locationValue" name="collection-location" [suggestions]="searchItems" (completeMethod)="search($event)" />
+                                    <label for="collection-location">Location</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-autocomplete [(ngModel)]="ownerValue" name="collection-owner" [suggestions]="searchItems" (completeMethod)="search($event)" />
+                                    <label for="collection-owner">Owner</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-autocomplete [(ngModel)]="donorValue" name="collection-donor" [suggestions]="searchItems" (completeMethod)="search($event)" />
+                                    <label for="collection-donor">Donor</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-autocomplete [(ngModel)]="bullValue" name="collection-bull" [suggestions]="searchItems" (completeMethod)="search($event)" />
+                                    <label for="collection-bull">Bull</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 5 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-datepicker [(ngModel)]="embryoReleaseDate" name="collection-embryo-release" [iconDisplay]="'input'" [showIcon]="true">
+                                        <ng-template #inputicon let-clickCallBack="clickCallBack">
+                                            <span class="picon picon-calendar" (click)="clickCallBack($event)"></span>
+                                        </ng-template>
+                                    </p-datepicker>
+                                    <label for="collection-embryo-release">Embryo release date</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="collection-rank" type="collection-rank" size="small" />
+                                    <label for="collection-rank">Collection rank</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="calving-rank" type="calving-rank" size="small" />
+                                    <label for="calving-rank">Calving rank</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 6 -->
+                            <div class="md:col-2">
+                                <div class="form-checkbox">
+                                    <p-checkbox inputId="collection-biopsy" name="collection-options" value="Biopsy" [(ngModel)]="collectionOptions" />
+                                    <label for="collection-biopsy">Biopsy</label>
+                                </div>
+                            </div>
+                            <div class="md:col-2">
+                                <div class="form-checkbox">
+                                    <p-checkbox inputId="collection-icsi" name="collection-options" value="ICSI" [(ngModel)]="collectionOptions" />
+                                    <label for="collection-icsi">ICSI</label>
+                                </div>
+                            </div>
+                            <div class="md:col-2">
+                                <div class="form-checkbox">
+                                    <p-checkbox inputId="collection-splitting" name="collection-options" value="Splitting" [(ngModel)]="collectionOptions" />
+                                    <label for="collection-splitting">Splitting</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </p-tabpanel>
+            </p-tabpanels>
+        </p-tabs>
+    </div>
 </main>

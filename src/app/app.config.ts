@@ -5,12 +5,14 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 
 import { providePrimeNG } from 'primeng/config';
 import { Synetics } from './theme';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
     providers: [
         provideBrowserGlobalErrorListeners(),
         provideZonelessChangeDetection(),
         provideRouter(routes), provideClientHydration(withEventReplay()),
+        provideAnimations(),
         providePrimeNG({
             ripple: true,
             theme: {

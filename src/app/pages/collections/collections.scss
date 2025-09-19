@@ -1,0 +1,12 @@
+.tab-header {
+    margin-bottom: 1.75rem;
+}
+
+fieldset {
+    row-gap: 2.25rem;
+    column-gap: 1.25rem;
+
+    &:not(:last-of-type) {
+        margin-bottom: 3.5rem;
+    }
+}

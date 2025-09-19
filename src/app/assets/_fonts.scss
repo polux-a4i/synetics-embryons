@@ -15,3 +15,127 @@
     font-weight: 400 800;
     font-style: italic;
 }
+
+@font-face {
+  font-family: 'picon';
+  src:
+    url('/fonts/icomoon/picon.woff2?c9m2nx') format('woff2'),
+    url('/fonts/icomoon/picon.ttf?c9m2nx') format('truetype'),
+    url('/fonts/icomoon/picon.woff?c9m2nx') format('woff'),
+    url('/fonts/icomoon/picon.svg?c9m2nx#picon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.picon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'picon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.picon-calendar:before {
+  content: "\e91f";
+}
+.picon-collection:before {
+  content: "\e91e";
+}
+.picon-check:before {
+  content: "\e919";
+}
+.picon-triangle-exclamation:before {
+  content: "\e91a";
+}
+.picon-phone:before {
+  content: "\e91b";
+}
+.picon-xmark:before {
+  content: "\e91c";
+}
+.picon-envelope:before {
+  content: "\e91d";
+}
+.picon-angle-up-solid:before {
+  content: "\e900";
+}
+.picon-angle-right-solid:before {
+  content: "\e901";
+}
+.picon-angle-down-solid:before {
+  content: "\e902";
+}
+.picon-angle-left-solid:before {
+  content: "\e903";
+}
+.picon-arrow-up-solid:before {
+  content: "\e904";
+}
+.picon-arrow-right-solid:before {
+  content: "\e905";
+}
+.picon-arrow-down-solid:before {
+  content: "\e906";
+}
+.picon-arrow-left-solid:before {
+  content: "\e907";
+}
+.picon-plus-solid:before {
+  content: "\e908";
+}
+.picon-minus-solid:before {
+  content: "\e909";
+}
+.picon-arrow-up-from-bracket-solid:before {
+  content: "\e90a";
+}
+.picon-download-solid:before {
+  content: "\e90b";
+}
+.picon-file-pdf-solid:before {
+  content: "\e90c";
+}
+.picon-heart-solid:before {
+  content: "\e90d";
+}
+.picon-star-solid:before {
+  content: "\e90e";
+}
+.picon-user-solid:before {
+  content: "\e90f";
+}
+.picon-users-solid:before {
+  content: "\e910";
+}
+.picon-linkedin-in-brands:before {
+  content: "\e911";
+}
+.picon-linkedin-brands:before {
+  content: "\e912";
+}
+.picon-facebook-f-brands:before {
+  content: "\e913";
+}
+.picon-square-facebook-brands:before {
+  content: "\e914";
+}
+.picon-instagram-brands:before {
+  content: "\e915";
+}
+.picon-square-instagram-brands:before {
+  content: "\e916";
+}
+.picon-youtube-brands:before {
+  content: "\e917";
+}
+.picon-square-youtube-brands:before {
+  content: "\e918";
+}

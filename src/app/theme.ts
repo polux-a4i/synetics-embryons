@@ -100,6 +100,47 @@ export const Synetics = definePreset(Aura, {
                 }
             }
         },
+        select: {
+            colorScheme: {
+                light: {
+                    root: {
+                        background: '{slate.100}',
+                        borderColor: '{slate.100}',
+                        borderRadius: '.5rem'
+                    },
+                    option: {
+                        color: '{primary.800}',
+                        selectedColor: '{primary.800}'
+                    },
+                    dropdown: {
+                        color: '{primary.800}'
+                    }
+                }
+            },
+            css: () => `
+                .p-select {
+                    width: 100%;
+                    height: 100%;
+                }
+            `
+        },
+        autocomplete: {
+            css: () => `
+                .p-autocomplete {
+                    width: 100%;
+                }
+            `
+        },
+        datepicker: {
+            inputIcon: {
+                color: '{primary.800}'
+            },
+            css: () => `
+                .p-datepicker {
+                    width: 100%;
+                }
+            `
+        },
         floatlabel: {
             colorScheme: {
                 light: {
@@ -108,6 +149,44 @@ export const Synetics = definePreset(Aura, {
                     }
                 }
             }
+        },
+        tabs: {
+            activeBar: {
+                background: 'transparent'
+            },
+            tablist: {
+                background: "transparent",
+                borderColor: "transparent"
+            },
+            tab: {
+                background: '{surface.0}',
+                activeColor: '{primary.600}',
+                activeBackground: '{surface.0}',
+                hoverColor: '{primary.600}',
+                hoverBackground: '{surface.0}'
+            },
+            tabpanel: {
+                padding: '1.6rem',
+                color: '{primary.800}',
+            },
+            css: () => `
+                .p-tabs {
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    gap: .5rem;
+                }
+                .p-tablist-tab-list {
+                    flex-flow: column;
+                    width: fit-content;
+                    gap: .5rem;
+                }
+                .p-tabpanels {
+                    border-radius: 0 3rem 0 0;
+                }
+                .p-tab {
+                    border-radius: .5rem 0 0 .5rem;
+                }
+            `
         }
     }
 });

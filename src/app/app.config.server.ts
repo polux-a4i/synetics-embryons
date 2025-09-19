@@ -5,10 +5,12 @@ import { serverRoutes } from './app.routes.server';
 
 import { providePrimeNG } from 'primeng/config';
 import { Synetics } from './theme';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 const serverConfig: ApplicationConfig = {
     providers: [
         provideServerRendering(withRoutes(serverRoutes)),
+        provideAnimations(),
         providePrimeNG({
             ripple: true,
             theme: {
