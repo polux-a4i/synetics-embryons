@@ -1,5 +1,6 @@
 {
   "routes": {
-    "/synetics-embryons": {}
+    "/synetics-embryons": {},
+    "/synetics-embryons/collections": {}
   }
 }
