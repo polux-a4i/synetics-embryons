@@ -6,10 +6,7 @@ main {
     isolation: isolate;
 
     &.bg-image {
-        background-image: image-set(
-            "/images/backgrounds/cows-bg.jpg" type("image/jpeg"),
-            "/images/backgrounds/cows-bg.webp" type("image/webp")
-        );
+        background-image: url("../../assets/images/backgrounds/cows-bg.webp");
         background-size: cover;
         background-repeat: no-repeat;
         background-position: right;
