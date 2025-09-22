@@ -3,7 +3,7 @@ export default `<!doctype html>
 <head>
   <meta charset="utf-8">
   <title>Test</title>
-  <base href="https://polux-a4i.github.io/synetics-embryons/">
+  <base href="/synetics-embryons/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="styles-NX34CPG5.css"></head>
