@@ -191,6 +191,14 @@ export const Synetics = definePreset(Aura, {
                 }
                 .p-tab {
                     border-radius: .5rem 0 0 .5rem;
+                    opacity: .6;
+                }
+                .p-tab-active,
+                .p-tab:hover {
+                    opacity: 1;
+                }
+                .p-tab.p-disabled {
+                    color: var(--p-surface-300)
                 }
             `
         }
