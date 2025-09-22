@@ -8,6 +8,7 @@ import { FloatLabel } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
 import { TabsModule } from 'primeng/tabs';
+import { Footer } from '../../components/footer/footer';
 
 interface CollectionOperator {
     name: string;
