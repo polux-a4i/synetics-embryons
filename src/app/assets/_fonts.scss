@@ -43,6 +43,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.picon-floppy-disk:before {
+  content: "\e920";
+}
+.picon-save:before {
+  content: "\e920";
+}
 .picon-calendar:before {
   content: "\e91f";
 }

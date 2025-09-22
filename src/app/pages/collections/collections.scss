@@ -10,3 +10,20 @@ fieldset {
         margin-bottom: 3.5rem;
     }
 }
+
+.c-footer {
+    margin-top: 2.25rem;
+
+    .c-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+
+        ol, menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+}

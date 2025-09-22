@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/synetics-embryons',
+  basePath: 'https://polux-a4i.github.io/synetics-embryons',
   supportedLocales: {
   "en-US": ""
 },
