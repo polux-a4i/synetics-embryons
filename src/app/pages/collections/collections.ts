@@ -9,6 +9,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
 import { TabsModule } from 'primeng/tabs';
 import { Footer } from '../../components/footer/footer';
+import { CollectionBanner } from '../../components/collection-banner/collection-banner';
 
 interface CollectionOperator {
     name: string;
@@ -22,7 +23,7 @@ interface CollectionType {
 
 @Component({
   selector: 'syn-collections',
-  imports: [TabsModule, InputTextModule, FormsModule, FloatLabel, SelectModule, DatePickerModule, AutoCompleteModule, CheckboxModule, ButtonModule],
+  imports: [CollectionBanner, TabsModule, InputTextModule, FormsModule, FloatLabel, SelectModule, DatePickerModule, AutoCompleteModule, CheckboxModule, ButtonModule],
   templateUrl: './collections.html',
   styleUrl: './collections.scss',
   standalone: true,
