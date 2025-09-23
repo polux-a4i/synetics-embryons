@@ -58,9 +58,9 @@
                         Last edit <time datetime="10.10.2024">10.10.2024</time>
                     </small>
                 </p-tab>
-                <p-tab value="collection-embryos" disabled>
+                <p-tab value="embryos" disabled>
                     <div class="heading-5">
-                        Collection embryos
+                        Embryos
                     </div>
 
                     <small>
@@ -79,7 +79,7 @@
 
                     <form action="#">
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
-                            <!-- Line 1 -->
+                            <!-- Line 1.1 -->
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
                                     <input pInputText id="collection-number" type="collection-number" size="small" />
@@ -99,7 +99,7 @@
                                 </p-floatlabel>
                             </div>
 
-                            <!-- Line 2 -->
+                            <!-- Line 1.2 -->
                             <div class="md:col-8">
                                 <p-floatlabel variant="over">
                                     <p-select [options]="types" [(ngModel)]="selectedType" id="collection-type" name="collection-type" optionLabel="name" />
@@ -119,7 +119,7 @@
                         </fieldset>
 
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
-                            <!-- Line 3 -->
+                            <!-- Line 1.3 -->
                             <div class="md:col-6">
                                 <p-floatlabel variant="over">
                                     <p-autocomplete [(ngModel)]="locationValue" name="collection-location" [suggestions]="searchItems" (completeMethod)="search($event)" />
@@ -133,7 +133,7 @@
                                 </p-floatlabel>
                             </div>
 
-                            <!-- Line 4 -->
+                            <!-- Line 1.4 -->
                             <div class="md:col-6">
                                 <p-floatlabel variant="over">
                                     <p-autocomplete [(ngModel)]="donorValue" name="collection-donor" [suggestions]="searchItems" (completeMethod)="search($event)" />
@@ -147,7 +147,7 @@
                                 </p-floatlabel>
                             </div>
 
-                            <!-- Line 5 -->
+                            <!-- Line 1.5 -->
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
                                     <p-datepicker [(ngModel)]="embryoReleaseDate" name="collection-embryo-release" [iconDisplay]="'input'" [showIcon]="true">
@@ -171,7 +171,7 @@
                                 </p-floatlabel>
                             </div>
 
-                            <!-- Line 6 -->
+                            <!-- Line 1.6 -->
                             <div class="md:col-2">
                                 <div class="form-checkbox">
                                     <p-checkbox inputId="collection-biopsy" name="collection-options" value="Biopsy" [(ngModel)]="collectionOptions" />
@@ -193,7 +193,7 @@
                         </fieldset>
 
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
-                            <!-- Line 7 -->
+                            <!-- Line 1.7 -->
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
                                     <p-select [options]="protocols" [(ngModel)]="selectedProtocol" id="collection-protocol" name="collection-protocol" optionLabel="name" />
@@ -213,7 +213,7 @@
                                 </p-floatlabel>
                             </div>
 
-                            <!-- Line 8 -->
+                            <!-- Line 1.8 -->
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
                                     <p-select [options]="contracts" [(ngModel)]="selectedContract" id="collection-contract" name="collection-contract" optionLabel="name" aria-describedby="contract-error" invalid />
@@ -255,7 +255,7 @@
                                 </h3>
                             </legend>
 
-                            <!-- Line 1 -->
+                            <!-- Line 2.1 -->
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
                                     <p-select [options]="follicularPopulations" [(ngModel)]="selectedFollicularPopulations" id="follicular-population" name="follicular-population" optionLabel="name" />
@@ -275,7 +275,7 @@
                                 </p-floatlabel>
                             </div>
 
-                            <!-- Line 2 -->
+                            <!-- Line 2.2 -->
                             <div class="md:col-12">
                                 <p-floatlabel variant="over">
                                     <input pInputText id="opu-comment" type="opu-comment" size="small" />
@@ -291,7 +291,7 @@
                                 </h3>
                             </legend>
 
-                            <!-- Line 3 -->
+                            <!-- Line 2.3 -->
                             <div class="md:col-6">
                                 <p-floatlabel variant="over">
                                     <input pInputText id="opu-rank" type="opu-rank" size="small" />
@@ -305,7 +305,7 @@
                                 </p-floatlabel>
                             </div>
 
-                            <!-- Line 4 -->
+                            <!-- Line 2.4 -->
                             <div class="md:col-6">
                                 <p-floatlabel variant="over">
                                     <input pInputText id="opu-location-ivf-incubator" type="opu-location-ivf-incubator" size="small" />
@@ -316,6 +316,198 @@
                                 <p-floatlabel variant="over">
                                     <input pInputText id="opu-location-maturing-incubator" type="opu-location-maturing-incubator" size="small" />
                                     <label for="opu-location-maturing-incubator">Location maturing incubator</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+                    </form>
+                </p-tabpanel>
+
+                <p-tabpanel value="collection-opu-ivm">
+                    <header class="tab-header">
+                        <h2 class="heading-3">
+                            <span class="picon picon-collection"></span>
+                            OPU/IVM
+                        </h2>
+                    </header>
+
+                    <form action="#">
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <legend>
+                                <h3 class="heading-4">
+                                    OPU Room
+                                </h3>
+                            </legend>
+
+                            <!-- Line 3.1 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="punctureRanks" [(ngModel)]="selectedPunctureRanks" id="puncture-rank" name="puncture-rank" optionLabel="name" />
+                                    <label for="puncture-rank">Puncture rank</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-operator" type="opu-operator" size="small" />
+                                    <label for="opu-operator">OPU operator</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 3.2 -->
+                            <div class="md:col-4">
+                                <div class="form-group">
+                                    <label for="follicles-under">Nbr of follicles under 7 mm</label>
+                                    <p-inputnumber [(ngModel)]="folliclesUnder" [showButtons]="true" buttonLayout="horizontal" inputId="follicles-under" spinnerMode="horizontal" [min]="0" [step]="1" name="follicles-under">
+                                        <ng-template #incrementbuttonicon>
+                                            <span class="picon picon-plus-solid"></span>
+                                        </ng-template>
+                                        <ng-template #decrementbuttonicon>
+                                            <span class="picon picon-minus-solid"></span>
+                                        </ng-template>
+                                    </p-inputnumber>
+                                </div>
+                            </div>
+                            <div class="md:col-4">
+                                <div class="form-group">
+                                    <label for="follicles-under">Nbr of follicles between 7 and 15 mm</label>
+                                    <p-inputnumber [(ngModel)]="folliclesBetween" [showButtons]="true" buttonLayout="horizontal" inputId="follicles-under" spinnerMode="horizontal" [min]="0" [step]="1" name="follicles-under">
+                                        <ng-template #incrementbuttonicon>
+                                            <span class="picon picon-plus-solid"></span>
+                                        </ng-template>
+                                        <ng-template #decrementbuttonicon>
+                                            <span class="picon picon-minus-solid"></span>
+                                        </ng-template>
+                                    </p-inputnumber>
+                                </div>
+                            </div>
+                            <div class="md:col-4">
+                                <div class="form-group">
+                                    <label for="follicles-under">Nbr of follicles larger than 15 mm</label>
+                                    <p-inputnumber [(ngModel)]="folliclesAbove" [showButtons]="true" buttonLayout="horizontal" inputId="follicles-under" spinnerMode="horizontal" [min]="0" [step]="1" name="follicles-under">
+                                        <ng-template #incrementbuttonicon>
+                                            <span class="picon picon-plus-solid"></span>
+                                        </ng-template>
+                                        <ng-template #decrementbuttonicon>
+                                            <span class="picon picon-minus-solid"></span>
+                                        </ng-template>
+                                    </p-inputnumber>
+                                </div>
+                            </div>
+
+                            <!-- Line 3.3 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-total-follicles" type="opu-total-follicles" size="small" />
+                                    <label for="opu-total-follicles">Total number of follicles</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-hour" type="opu-hour" size="small" />
+                                    <label for="opu-hour">OPU hour</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 3.4 -->
+                            <div class="md:col-12">
+                                <p-floatlabel>
+                                    <textarea pTextarea id="opu-room-comment" [(ngModel)]="opuRoomComment" rows="5" cols="30" style="resize: none" class="h-full" name="opu-room-comment"></textarea>
+                                    <label for="opu-room-comment">Comment</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <legend>
+                                <h3 class="heading-4">
+                                    Lab
+                                </h3>
+                            </legend>
+
+                            <!-- Line 3.5 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-name" type="lab-name" size="small" />
+                                    <label for="lab-name">Lab</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-nb-division-sessions" type="lab-nb-division-sessions" size="small" />
+                                    <label for="lab-nb-division-sessions">Number of session divisions</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-nb-q1-cocs" type="lab-nb-q1-cocs" size="small" />
+                                    <label for="lab-nb-q1-cocs">Number of Q1 COCs</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 3.6 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-nb-q2-cocs" type="lab-nb-q2-cocs" size="small" />
+                                    <label for="lab-nb-q2-cocs">Number of Q2 COCs</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-nb-degenerated-cocs" type="lab-nb-degenerated-cocs" size="small" />
+                                    <label for="lab-nb-degenerated-cocs">Number of degenerated COCs</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-nb-expanded-cocs" type="lab-nb-expanded-cocs" size="small" />
+                                    <label for="lab-nb-expanded-cocs">Number of expanded COCs</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 3.7 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-nb-maturing-cocs" type="lab-nb-maturing-cocs" size="small" />
+                                    <label for="lab-nb-maturing-cocs">Number of COCs maturing</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-nb-total-cocs" type="lab-nb-total-cocs" size="small" />
+                                    <label for="lab-nb-total-cocs">Total number of COCs</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-maturation-rank" type="lab-maturation-rank" size="small" />
+                                    <label for="lab-maturation-rank">Maturation rank</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 3.8 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="maturationIncubators" [(ngModel)]="selectedMaturationIncubators" id="lab-maturation-incubator" name="lab-maturation-incubator" optionLabel="name" />
+                                    <label for="lab-maturation-incubator">Maturation incubator</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="maturationOperators" [(ngModel)]="selectedMaturationOperators" id="lab-maturation-operator" name="lab-maturation-operator" optionLabel="name" />
+                                    <label for="lab-maturation-operator">Maturation operator</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="lab-maturation-hour" type="lab-maturation-hour" size="small" />
+                                    <label for="lab-maturation-hour">Hour of maturation</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 3.9 -->
+                            <div class="md:col-12">
+                                <p-floatlabel>
+                                    <textarea pTextarea id="opu-room-comment" [(ngModel)]="opuLabComment" rows="5" cols="30" style="resize: none" class="h-full" name="opu-room-comment"></textarea>
+                                    <label for="opu-room-comment">Comment</label>
                                 </p-floatlabel>
                             </div>
                         </fieldset>

@@ -74,7 +74,6 @@ export const Synetics = definePreset(Aura, {
                 .p-button-accent {
                     background: ${dt('button.accent.color')};
                     color: ${dt('button.accent.inverse.color')};
-                    transition-duration: ${dt('my.transition.fast')};
                 }
             `
         },
@@ -105,6 +104,47 @@ export const Synetics = definePreset(Aura, {
                     }
                 }
             }
+        },
+        inputnumber: {
+            colorScheme: {
+                light: {
+                    button: {
+                        background: '{slate.100}',
+                        borderColor: '{slate.100}',
+                        hoverBackground: '{slate.200}',
+                        hoverBorderColor: '{slate.200}'
+                    }
+                }
+            },
+            css: ({ dt }) => `
+                .p-inputnumber-button > * {
+                    border-radius: 3px;
+                    font-size: .8em;
+                    padding: .2rem;
+                    color: ${dt('surface.0')};
+                    background: ${dt('primary.800')};
+                    margin: -3px;
+                }
+            `
+        },
+        textarea: {
+            colorScheme: {
+                light: {
+                    root: {
+                        paddingX: "1rem",
+                        paddingY: "1rem",
+                        placeholderColor: '{primary.800}',
+                        background: '{slate.100}',
+                        borderColor: '{slate.100}',
+                        borderRadius: '.5rem'
+                    }
+                }
+            },
+            css: () => `
+                .p-textarea {
+                    width: 100%;
+                }
+            `
         },
         select: {
             colorScheme: {
@@ -151,6 +191,7 @@ export const Synetics = definePreset(Aura, {
             colorScheme: {
                 light: {
                     root: {
+                        positionY: ".75rem",
                         color: '{primary.800}'
                     }
                 }

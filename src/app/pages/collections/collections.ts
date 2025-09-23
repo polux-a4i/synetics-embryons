@@ -10,6 +10,8 @@ import { SelectModule } from 'primeng/select';
 import { TabsModule } from 'primeng/tabs';
 import { Footer } from '../../components/footer/footer';
 import { CollectionBanner } from '../../components/collection-banner/collection-banner';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { TextareaModule } from 'primeng/textarea';
 
 interface SelectData {
     name: string;
@@ -17,11 +19,24 @@ interface SelectData {
 }
 
 @Component({
-  selector: 'syn-collections',
-  imports: [CollectionBanner, TabsModule, InputTextModule, FormsModule, FloatLabel, SelectModule, DatePickerModule, AutoCompleteModule, CheckboxModule, ButtonModule],
-  templateUrl: './collections.html',
-  styleUrl: './collections.scss',
-  standalone: true,
+    selector: 'syn-collections',
+    imports: [
+        CollectionBanner,
+        TabsModule,
+        InputTextModule,
+        InputNumberModule,
+        TextareaModule,
+        FormsModule,
+        FloatLabel,
+        SelectModule,
+        DatePickerModule,
+        AutoCompleteModule,
+        CheckboxModule,
+        ButtonModule
+    ],
+    templateUrl: './collections.html',
+    styleUrl: './collections.scss',
+    standalone: true,
 })
 export class Collections implements OnInit {
     // First step data
@@ -59,6 +74,24 @@ export class Collections implements OnInit {
 
     dfrAnomalies: SelectData[] | undefined;
     selectedDfrAnomalies: SelectData | undefined;
+
+    // Third step data
+    punctureRanks: SelectData[] | undefined;
+    selectedPunctureRanks: SelectData | undefined;
+
+    folliclesUnder: number | undefined;
+    folliclesBetween: number | undefined;
+    folliclesAbove: number | undefined;
+
+    opuRoomComment: string | undefined;
+
+    maturationIncubators: SelectData[] | undefined;
+    selectedMaturationIncubators: SelectData | undefined;
+
+    maturationOperators: SelectData[] | undefined;
+    selectedMaturationOperators: SelectData | undefined;
+
+    opuLabComment: string | undefined;
 
     ngOnInit() {
         // First step data

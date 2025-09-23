@@ -3,6 +3,13 @@
     --form-valid: #26AD60;
 }
 
+.form-group {
+    label {
+        display: block;
+        margin-bottom: .5rem;
+    }
+}
+
 .form-checkbox {
     display: flex;
     align-items: center;
