@@ -11,27 +11,7 @@ import { TabsModule } from 'primeng/tabs';
 import { Footer } from '../../components/footer/footer';
 import { CollectionBanner } from '../../components/collection-banner/collection-banner';
 
-interface CollectionOperator {
-    name: string;
-    code: string;
-}
-
-interface CollectionType {
-    name: string;
-    code: string;
-}
-
-interface Protocol {
-    name: string;
-    code: string;
-}
-
-interface Experiment {
-    name: string;
-    code: string;
-}
-
-interface Contract {
+interface SelectData {
     name: string;
     code: string;
 }
@@ -44,21 +24,22 @@ interface Contract {
   standalone: true,
 })
 export class Collections implements OnInit {
-    operators: CollectionOperator[] | undefined;
-    selectedOperator: CollectionOperator | undefined;
+    // First step data
+    operators: SelectData[] | undefined;
+    selectedOperator: SelectData | undefined;
 
-    types: CollectionType[] | undefined;
-    selectedType: CollectionType | undefined;
+    types: SelectData[] | undefined;
+    selectedType: SelectData | undefined;
 
-    protocols: Protocol[] | undefined;
-    selectedProtocol: Protocol | undefined;
+    protocols: SelectData[] | undefined;
+    selectedProtocol: SelectData | undefined;
 
-    experimentOptions: Experiment[] | undefined;
-    selectedFirstExperiment: Experiment | undefined;
-    selectedLastExperiment: Experiment | undefined;
+    experimentOptions: SelectData[] | undefined;
+    selectedFirstExperiment: SelectData | undefined;
+    selectedLastExperiment: SelectData | undefined;
 
-    contracts: Contract[] | undefined;
-    selectedContract: Contract | undefined;
+    contracts: SelectData[] | undefined;
+    selectedContract: SelectData | undefined;
 
     collectionDate: Date | undefined;
 
@@ -72,11 +53,15 @@ export class Collections implements OnInit {
 
     collectionOptions: string[] = [];
 
-    search(event: AutoCompleteCompleteEvent) {
-        this.searchItems = [...Array(10).keys()].map(item => event.query + '-' + item);
-    }
+    // Second step data
+    follicularPopulations: SelectData[] | undefined;
+    selectedFollicularPopulations: SelectData | undefined;
+
+    dfrAnomalies: SelectData[] | undefined;
+    selectedDfrAnomalies: SelectData | undefined;
 
     ngOnInit() {
+        // First step data
         this.operators = [
             { name: 'Operator 1', code: 'op-1' },
             { name: 'Operator 2', code: 'op-2' },
@@ -112,5 +97,9 @@ export class Collections implements OnInit {
             { name: 'Contract 4', code: 'contract-4' },
             { name: 'Contract 5', code: 'contract-5' }
         ];
+    }
+
+    search(event: AutoCompleteCompleteEvent) {
+        this.searchItems = [...Array(10).keys()].map(item => event.query + '-' + item);
     }
 }

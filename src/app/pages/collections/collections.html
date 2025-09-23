@@ -238,6 +238,89 @@
                         </fieldset>
                     </form>
                 </p-tabpanel>
+
+                <p-tabpanel value="collection-before-opu">
+                    <header class="tab-header">
+                        <h2 class="heading-3">
+                            <span class="picon picon-collection"></span>
+                            Before OPU
+                        </h2>
+                    </header>
+
+                    <form action="#">
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <legend>
+                                <h3 class="heading-4">
+                                    OPU Room
+                                </h3>
+                            </legend>
+
+                            <!-- Line 1 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="follicularPopulations" [(ngModel)]="selectedFollicularPopulations" id="follicular-population" name="follicular-population" optionLabel="name" />
+                                    <label for="follicular-population">Follicular population</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="donor-status" type="donor-status" size="small" />
+                                    <label for="donor-status">Donor status</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="dfrAnomalies" [(ngModel)]="selectedDfrAnomalies" id="follicular-population" name="follicular-population" optionLabel="name" />
+                                    <label for="follicular-population">DFR anomalies</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 2 -->
+                            <div class="md:col-12">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-comment" type="opu-comment" size="small" />
+                                    <label for="opu-comment">Comment</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <legend>
+                                <h3 class="heading-4">
+                                    Lab
+                                </h3>
+                            </legend>
+
+                            <!-- Line 3 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-rank" type="opu-rank" size="small" />
+                                    <label for="opu-rank">OPU rank</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-exit-rank" type="opu-exit-rank" size="small" />
+                                    <label for="opu-exit-rank">Exit rank</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-location-ivf-incubator" type="opu-location-ivf-incubator" size="small" />
+                                    <label for="opu-location-ivf-incubator">Location IVF Incubator</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="opu-location-maturing-incubator" type="opu-location-maturing-incubator" size="small" />
+                                    <label for="opu-location-maturing-incubator">Location maturing incubator</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+                    </form>
+                </p-tabpanel>
             </p-tabpanels>
         </p-tabs>
 

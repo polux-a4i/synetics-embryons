@@ -61,6 +61,10 @@ fieldset {
     margin: 0;
     padding: 0;
     border: none;
+
+    legend {
+        margin-bottom: 1rem;
+    }
 }
 
 ol, ul, menu {
