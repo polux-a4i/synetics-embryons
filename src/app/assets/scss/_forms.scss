@@ -1,3 +1,8 @@
+:root {
+    --form-invalid: var(--p-form-field-invalid-placeholder-color);
+    --form-valid: #26AD60;
+}
+
 .form-checkbox {
     display: flex;
     align-items: center;
@@ -5,5 +10,18 @@
 
     label {
         cursor: pointer;
+    }
+}
+
+.field-valid {
+    --p-inputtext-border-color: var(--form-valid);
+}
+
+.form-tooltip {
+    text-align: right;
+    font-style: italic;
+
+    &.error {
+        color: var(--p-form-field-invalid-placeholder-color);
     }
 }

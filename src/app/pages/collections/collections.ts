@@ -21,6 +21,21 @@ interface CollectionType {
     code: string;
 }
 
+interface Protocol {
+    name: string;
+    code: string;
+}
+
+interface Experiment {
+    name: string;
+    code: string;
+}
+
+interface Contract {
+    name: string;
+    code: string;
+}
+
 @Component({
   selector: 'syn-collections',
   imports: [CollectionBanner, TabsModule, InputTextModule, FormsModule, FloatLabel, SelectModule, DatePickerModule, AutoCompleteModule, CheckboxModule, ButtonModule],
@@ -34,6 +49,16 @@ export class Collections implements OnInit {
 
     types: CollectionType[] | undefined;
     selectedType: CollectionType | undefined;
+
+    protocols: Protocol[] | undefined;
+    selectedProtocol: Protocol | undefined;
+
+    experimentOptions: Experiment[] | undefined;
+    selectedFirstExperiment: Experiment | undefined;
+    selectedLastExperiment: Experiment | undefined;
+
+    contracts: Contract[] | undefined;
+    selectedContract: Contract | undefined;
 
     collectionDate: Date | undefined;
 
@@ -65,6 +90,27 @@ export class Collections implements OnInit {
             { name: 'Type 3', code: 'type-3' },
             { name: 'Type 4', code: 'type-4' },
             { name: 'Type 5', code: 'type-5' }
+        ];
+        this.protocols = [
+            { name: 'Protocol 1', code: 'protocol-1' },
+            { name: 'Protocol 2', code: 'protocol-2' },
+            { name: 'Protocol 3', code: 'protocol-3' },
+            { name: 'Protocol 4', code: 'protocol-4' },
+            { name: 'Protocol 5', code: 'protocol-5' }
+        ];
+        this.experimentOptions = [
+            { name: 'Experiment 1', code: 'experiment-1' },
+            { name: 'Experiment 2', code: 'experiment-2' },
+            { name: 'Experiment 3', code: 'experiment-3' },
+            { name: 'Experiment 4', code: 'experiment-4' },
+            { name: 'Experiment 5', code: 'experiment-5' }
+        ];
+        this.contracts = [
+            { name: 'Contract 1', code: 'contract-1' },
+            { name: 'Contract 2', code: 'contract-2' },
+            { name: 'Contract 3', code: 'contract-3' },
+            { name: 'Contract 4', code: 'contract-4' },
+            { name: 'Contract 5', code: 'contract-5' }
         ];
     }
 }
