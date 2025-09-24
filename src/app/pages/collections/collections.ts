@@ -93,6 +93,23 @@ export class Collections implements OnInit {
 
     opuLabComment: string | undefined;
 
+    // Fourth step data
+    bullIvfValue: any;
+
+    ivfLabs: SelectData[] | undefined;
+    selectedIvfLab: SelectData | undefined;
+
+    ivfProblemTypes: SelectData[] | undefined;
+    selectedIvfProblemType: SelectData | undefined;
+
+    ivfProblemComment: string | undefined;
+
+    ivfIncubators: SelectData[] | undefined;
+    selectedIvfIncubator: SelectData | undefined;
+
+    ivfProtocols: SelectData[] | undefined;
+    selectedIvfProtocol: SelectData | undefined;
+
     ngOnInit() {
         // First step data
         this.operators = [

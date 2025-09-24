@@ -249,7 +249,7 @@
 
                     <form action="#">
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
-                            <legend>
+                            <legend class="md:col-12">
                                 <h3 class="heading-4">
                                     OPU Room
                                 </h3>
@@ -285,7 +285,7 @@
                         </fieldset>
 
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
-                            <legend>
+                            <legend class="md:col-12">
                                 <h3 class="heading-4">
                                     Lab
                                 </h3>
@@ -332,7 +332,7 @@
 
                     <form action="#">
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
-                            <legend>
+                            <legend class="md:col-12">
                                 <h3 class="heading-4">
                                     OPU Room
                                 </h3>
@@ -417,7 +417,7 @@
                         </fieldset>
 
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
-                            <legend>
+                            <legend class="md:col-12">
                                 <h3 class="heading-4">
                                     Lab
                                 </h3>
@@ -509,6 +509,131 @@
                                     <textarea pTextarea id="opu-room-comment" [(ngModel)]="opuLabComment" rows="5" cols="30" style="resize: none" class="h-full" name="opu-room-comment"></textarea>
                                     <label for="opu-room-comment">Comment</label>
                                 </p-floatlabel>
+                            </div>
+                        </fieldset>
+                    </form>
+                </p-tabpanel>
+
+                <p-tabpanel value="collection-ivf">
+                    <header class="tab-header">
+                        <h2 class="heading-3">
+                            <span class="picon picon-collection"></span>
+                            IVF
+                        </h2>
+                    </header>
+
+                    <form action="#">
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <!-- Line 4.1 -->
+                            <div class="md:col-12">
+                                <p-floatlabel variant="over">
+                                    <p-autocomplete [(ngModel)]="bullIvfValue" name="ivf-bull" [suggestions]="searchItems" (completeMethod)="search($event)" />
+                                    <label for="ivf-bull">Bull</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.2 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-batch" type="ivf-semen-batch" size="small" />
+                                    <label for="ivf-semen-batch">Semen batch</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-type" type="ivf-semen-type" size="small" />
+                                    <label for="ivf-semen-type">Semen type</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-conservation-mode" type="ivf-conservation-mode" size="small" />
+                                    <label for="ivf-conservation-mode">Conservation mode</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.3 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-prep-method" type="ivf-semen-prep-method" size="small" />
+                                    <label for="ivf-semen-prep-method">Semen preparation method</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-heparin" type="ivf-heparin" size="small" />
+                                    <label for="ivf-heparin">Heparin</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-dose" type="ivf-semen-dose" size="small" />
+                                    <label for="ivf-semen-dose">Semen dose</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.4 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfLabs" [(ngModel)]="selectedIvfLab" id="ivf-selected" name="ivf-selected" optionLabel="name" />
+                                    <label for="ivf-selected">IVF Lab</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-cumulus-quality" type="ivf-cumulus-quality" size="small" />
+                                    <label for="ivf-cumulus-quality">Cumulus quality</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.5 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-cumulus-quality" type="ivf-cumulus-quality" size="small" />
+                                    <label for="ivf-cumulus-quality">Nbr of discarded oocytes</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-start-time" type="ivf-start-time" size="small" />
+                                    <label for="ivf-start-time">IVF start time</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfProblemTypes" [(ngModel)]="selectedIvfProblemType" id="ivf-selected-problem" name="ivf-selected-problem" optionLabel="name" />
+                                    <label for="ivf-selected-problem">Problem</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.6 -->
+                            <div class="md:col-12">
+                                <p-floatlabel>
+                                    <textarea pTextarea id="ivf-" [(ngModel)]="ivfProblemComment" rows="5" cols="30" style="resize: none" class="h-full" name="ivf-"></textarea>
+                                    <label for="ivf-">Problem precision</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.7 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfIncubators" [(ngModel)]="selectedIvfIncubator" id="ivf-incubator" name="ivf-incubator" optionLabel="name" />
+                                    <label for="ivf-incubator">IVF Incubators</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfProtocols" [(ngModel)]="selectedIvfProtocol" id="ivf-protocol" name="ivf-protocol" optionLabel="name" />
+                                    <label for="ivf-protocol">IVF Protocols</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.8 -->
+                            <div class="md:col-12">
+                                <p-button variant="outlined" [class]="'p-button-block'">
+                                    <span class="picon picon-plus-solid" pButtonIcon></span>
+                                    <span pButtonLabel>Add an IVF</span>
+                                </p-button>
                             </div>
                         </fieldset>
                     </form>
