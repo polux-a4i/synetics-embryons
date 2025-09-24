@@ -767,6 +767,155 @@
                         </fieldset>
                     </form>
                 </p-tabpanel>
+
+                <p-tabpanel value="collection-report">
+                    <header class="tab-header">
+                        <h2 class="heading-3">
+                            <span class="picon picon-collection"></span>
+                            Collection report
+                        </h2>
+                    </header>
+
+                    <form action="#">
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                           <legend class="md:col-12">
+                                <h3 class="heading-4">
+                                    D5
+                                </h3>
+                            </legend>
+
+                            <!-- Line 6.1 -->
+                            <div class="md:col-12">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-assessing-nb" type="rp-assessing-nb" size="small" />
+                                    <label for="rp-assessing-nb">Assessing number</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                           <legend class="md:col-12">
+                                <h3 class="heading-4">
+                                    D6
+                                </h3>
+                            </legend>
+
+                            <!-- Line 6.2 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-d6-number-q1" type="rp-d6-number-q1" size="small" />
+                                    <label for="rp-d6-number-q1">Number of Q1</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-d6-number-q2" type="rp-d6-number-q2" size="small" />
+                                    <label for="rp-d6-number-q2">Number of Q2</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 6.3 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-d6-number-q3" type="rp-d6-number-q3" size="small" />
+                                    <label for="rp-d6-number-q3">Number of Q3</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-predicted-embryos" type="rp-predicted-embryos" size="small" />
+                                    <label for="rp-predicted-embryos">Maximal number of predicted embryos</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                           <legend class="md:col-12">
+                                <h3 class="heading-4">
+                                    D7
+                                </h3>
+                            </legend>
+
+                            <!-- Line 6.4 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-d7-number-q1" type="rp-d7-number-q1" size="small" />
+                                    <label for="rp-d7-number-q1">Number of Q1</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-d7-number-q2" type="rp-d7-number-q2" size="small" />
+                                    <label for="rp-d7-number-q2">Number of Q2</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-d7-number-q3" type="rp-d7-number-q3" size="small" />
+                                    <label for="rp-d7-number-q3">Number of Q3</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 6.5 -->
+                            <div class="md:col-12">
+                                <p-button variant="outlined" [class]="'p-button-block'">
+                                    <span class="picon picon-share-solid-full" pButtonIcon></span>
+                                    <span pButtonLabel>Take out the embryos</span>
+                                </p-button>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <!-- Line 6.6 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-viable-embryos" type="rp-viable-embryos" size="small" />
+                                    <label for="rp-viable-embryos">Nbr of viable embryos</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-fresh-embryos" type="rp-fresh-embryos" size="small" />
+                                    <label for="rp-fresh-embryos">Nbr of fresh embryos</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-frozen-embryos" type="rp-frozen-embryos" size="small" />
+                                    <label for="rp-frozen-embryos">Nbr of frozen embryos</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 6.7 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-discarded-embryos" type="rp-discarded-embryos" size="small" />
+                                    <label for="rp-discarded-embryos">Nbr of discarded embryos</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-bisected-embryos" type="rp-bisected-embryos" size="small" />
+                                    <label for="rp-bisected-embryos">Nbr of bisected embryos</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-biopsed-embryos" type="rp-biopsed-embryos" size="small" />
+                                    <label for="rp-biopsed-embryos">Nbr of biopsed embryos</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 6.8 -->
+                            <div class="md:col-12">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="rp-freeze" type="rp-freeze" size="small" />
+                                    <label for="rp-freeze">Freezer</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+                    </form>
+                </p-tabpanel>
             </p-tabpanels>
         </p-tabs>
 

@@ -43,6 +43,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.picon-share-solid-full:before {
+  content: "\e921";
+}
 .picon-floppy-disk:before {
   content: "\e920";
 }
