@@ -110,6 +110,20 @@ export class Collections implements OnInit {
     ivfProtocols: SelectData[] | undefined;
     selectedIvfProtocol: SelectData | undefined;
 
+    // Fifth step data
+    pfMobilityOptions: SelectData[] | undefined;
+    selectedPfMobility: SelectData | undefined;
+
+    pfProblemTypes: SelectData[] | undefined;
+    selectedPfProblemType: SelectData | undefined;
+
+    pfProblemComment: string | undefined;
+
+    pfDevIncubators: SelectData[] | undefined;
+    selectedPfDevIncubator: SelectData | undefined;
+
+    pfProblemComment2: string | undefined;
+
     ngOnInit() {
         // First step data
         this.operators = [

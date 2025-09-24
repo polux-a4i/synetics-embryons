@@ -609,7 +609,7 @@
                             <!-- Line 4.6 -->
                             <div class="md:col-12">
                                 <p-floatlabel>
-                                    <textarea pTextarea id="ivf-" [(ngModel)]="ivfProblemComment" rows="5" cols="30" style="resize: none" class="h-full" name="ivf-"></textarea>
+                                    <textarea pTextarea id="ivf-problem-comment" [(ngModel)]="ivfProblemComment" rows="5" cols="30" style="resize: none" class="h-full" name="ivf-problem-comment"></textarea>
                                     <label for="ivf-">Problem precision</label>
                                 </p-floatlabel>
                             </div>
@@ -634,6 +634,135 @@
                                     <span class="picon picon-plus-solid" pButtonIcon></span>
                                     <span pButtonLabel>Add an IVF</span>
                                 </p-button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </p-tabpanel>
+
+                <p-tabpanel value="collection-post-fert">
+                    <header class="tab-header">
+                        <h2 class="heading-3">
+                            <span class="picon picon-collection"></span>
+                            Post-fertilization
+                        </h2>
+                    </header>
+
+                    <form action="#">
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <!-- Line 5.1 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="pfMobilityOptions" [(ngModel)]="selectedPfMobility" id="pf-mobility" name="pf-mobility" optionLabel="name" />
+                                    <label for="pf-mobility">Post fertilization mobility</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-hour" type="pf-hour" size="small" />
+                                    <label for="pf-hour">Hour</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-start-time" type="pf-start-time" size="small" />
+                                    <label for="pf-start-time">Nbr of discarded oocytes</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 5.2 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-maturing-oocytes" type="pf-maturing-oocytes" size="small" />
+                                    <label for="pf-maturing-oocytes">Nbr of maturing oocytes</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="pfProblemTypes" [(ngModel)]="selectedPfProblemType" id="pf-problem" name="pf-problem" optionLabel="name" />
+                                    <label for="pf-problem">Problem</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 5.3 -->
+                            <div class="md:col-12">
+                                <p-floatlabel>
+                                    <textarea pTextarea id="pf-problem-comment" [(ngModel)]="pfProblemComment" rows="5" cols="30" style="resize: none" class="h-full" name="pf-problem-comment"></textarea>
+                                    <label for="pf-problem-comment">Problem precision</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 5.4 -->
+                            <div class="md:col-12">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="pfDevIncubators" [(ngModel)]="selectedPfDevIncubator" id="pf-dev-incubator" name="pf-dev-incubator" optionLabel="name" />
+                                    <label for="pf-dev-incubator">Development incubator</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <!-- Line 5.5 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-cleaved-embryos" type="pf-cleaved-embryos" size="small" />
+                                    <label for="pf-cleaved-embryos">Nbr of cleaved embryos</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-fixed-oocytes" type="pf-fixed-oocytes" size="small" />
+                                    <label for="pf-fixed-oocytes">Nbr of fixed oocytes</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 5.6 -->
+                            <div class="md:col-12">
+                                <p-floatlabel>
+                                    <textarea pTextarea id="pf-problem-comment-2" [(ngModel)]="pfProblemComment2" rows="5" cols="30" style="resize: none" class="h-full" name="pf-problem-comment-2"></textarea>
+                                    <label for="pf-problem-comment-2">Problem precision</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <legend class="md:col-12">
+                                <h3 class="heading-4">
+                                    Fixation results
+                                </h3>
+                            </legend>
+
+                            <!-- Line 5.7 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-fertilized-ooctyes" type="pf-fertilized-ooctyes" size="small" />
+                                    <label for="pf-fertilized-ooctyes">Nbr of fertilized oocytes</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-polyspermic-oocytes" type="pf-polyspermic-oocytes" size="small" />
+                                    <label for="pf-polyspermic-oocytes">Nbr of polyspermic oocytes</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-non-fertilized-oocytes" type="pf-non-fertilized-oocytes" size="small" />
+                                    <label for="pf-non-fertilized-oocytes">Nbr of non-fertilized oocytes</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 5.8 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-other-oocytes" type="pf-other-oocytes" size="small" />
+                                    <label for="pf-other-oocytes">Nbr of other oocytes</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="pf-degenerated-oocytes" type="pf-degenerated-oocytes" size="small" />
+                                    <label for="pf-degenerated-oocytes">Nbr of degenerated oocytes</label>
+                                </p-floatlabel>
                             </div>
                         </fieldset>
                     </form>
