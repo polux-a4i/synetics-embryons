@@ -43,6 +43,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.picon-circle-check-solid-full:before {
+  content: "\e922";
+}
 .picon-share-solid-full:before {
   content: "\e921";
 }

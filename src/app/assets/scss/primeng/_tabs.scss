@@ -1,0 +1,20 @@
+@layer primeng {
+    .p-tab {
+        &.p-tab-valid {
+            position: relative;
+
+            --p-tabs-tab-padding: 1rem 2.5rem 1rem 1.125rem;
+
+            &::after {
+                font-family: picon;
+                content: "\e922";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: .75rem;
+                font-size: 1.5em;
+                color: var(--form-valid);
+            }
+        }
+    }
+}
