@@ -30,6 +30,14 @@ menu {
     font-size: .95em;
     font-weight: 600;
 
+    &.settings-menu {
+        gap: .5rem;
+
+        .picon {
+            font-size: 1.2em;
+        }
+    }
+
     li {
         a {
             color: inherit;

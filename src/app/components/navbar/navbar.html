@@ -12,7 +12,7 @@
             </div>
 
             @if (!hideMenu) {
-                <menu>
+                <menu class="reset">
                     <li>
                         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                             Home
@@ -42,6 +42,23 @@
                         <a routerLink="/invoicing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
                             Invoicing
                         </a>
+                    </li>
+                </menu>
+
+                <menu class="reset settings-menu">
+                    <li>
+                        <p-button [rounded]="true">
+                            <ng-template #icon>
+                                <span class="picon picon-gear-solid-full"></span>
+                            </ng-template>
+                        </p-button>
+                    </li>
+                    <li>
+                        <p-button [rounded]="true">
+                            <ng-template #icon>
+                                <span class="picon picon-user-solid"></span>
+                            </ng-template>
+                        </p-button>
                     </li>
                 </menu>
             }
