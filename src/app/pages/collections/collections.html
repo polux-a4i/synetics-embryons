@@ -921,25 +921,11 @@
 
         <footer class="c-footer">
             <nav class="c-nav">
-                <ol class="reset">
-                    <li>
-                        <p-button type="link" variant="outlined">
-                            <span class="picon picon-arrow-left-solid" pButtonIcon></span>
-                            <span pButtonLabel>Previous collection</span>
-                        </p-button>
-                    </li>
-                    <li>
-                        <p-button type="link" variant="outlined">
-                            <span pButtonLabel>Next collection</span>
-                            <span class="picon picon-arrow-right-solid" pButtonIcon></span>
-                        </p-button>
-                    </li>
-                </ol>
-
                 <menu class="reset">
                     <li>
-                        <p-button type="link">
-                            <span pButtonLabel>Collection certificate</span>
+                        <p-button variant="outlined">
+                            <span pButtonLabel>Cancel without saving</span>
+                            <span class="picon picon-xmark" pButtonIcon></span>
                         </p-button>
                     </li>
                     <li>
@@ -953,3 +939,5 @@
         </footer>
     </div>
 </main>
+
+<syn-collection-footer />

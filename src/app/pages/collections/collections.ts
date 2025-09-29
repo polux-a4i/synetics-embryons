@@ -12,6 +12,7 @@ import { Footer } from '../../components/footer/footer';
 import { CollectionBanner } from '../../components/collection-banner/collection-banner';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TextareaModule } from 'primeng/textarea';
+import { CollectionFooter } from '../../components/collection-footer/collection-footer';
 
 interface SelectData {
     name: string;
@@ -22,6 +23,7 @@ interface SelectData {
     selector: 'syn-collections',
     imports: [
         CollectionBanner,
+        CollectionFooter,
         TabsModule,
         InputTextModule,
         InputNumberModule,
