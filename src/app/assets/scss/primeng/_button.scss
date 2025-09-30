@@ -9,4 +9,10 @@
             width: 100%;
         }
     }
+
+    .p-button-left {
+        &, button {
+            justify-content: left !important;
+        }
+    }
 }

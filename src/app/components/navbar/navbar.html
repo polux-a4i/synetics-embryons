@@ -60,19 +60,24 @@
                             </ng-template>
                         </p-button>
                     </li>
+                    <li>
+                        <syn-lang />
+                    </li>
                 </menu>
             }
 
-            <div>
-                @if (hideMenu) {
+            @if (hideMenu) {
+                <div class="side-menu">
                     <p-button
                         size="large"
                         label="Contact"
                         variant="outlined"
                         severity="secondary"
                     />
-                }
-            </div>
+
+                    <syn-lang />
+                </div>
+            }
         </div>
     </div>
 </nav>

@@ -35,7 +35,7 @@ export const Synetics = definePreset(Aura, {
     components: {
         button: {
             root: {
-                borderRadius: '1rem 0 1rem 0'
+                borderRadius: '1rem 0 1rem 0',
             },
             colorScheme: {
                 light: {
@@ -74,6 +74,9 @@ export const Synetics = definePreset(Aura, {
                 .p-button-accent {
                     background: ${dt('button.accent.color')};
                     color: ${dt('button.accent.inverse.color')};
+                }
+                .p-button-text {
+                    border-radius: .5rem;
                 }
             `
         },
@@ -242,6 +245,11 @@ export const Synetics = definePreset(Aura, {
                     color: var(--p-surface-300)
                 }
             `
+        },
+        popover: {
+            content: {
+                padding: '.5rem'
+            }
         }
     }
 });

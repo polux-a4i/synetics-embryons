@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive, RoutesRecognized } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { Lang } from '../lang/lang';
 
 @Component({
   selector: 'syn-navbar',
-  imports: [ButtonModule, RouterLink, RouterLinkActive],
+  imports: [Lang, ButtonModule, RouterLink, RouterLinkActive],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })
