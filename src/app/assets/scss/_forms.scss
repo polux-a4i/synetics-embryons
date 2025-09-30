@@ -22,10 +22,10 @@
 
 .field-valid {
     --p-inputtext-border-color: var(--form-valid);
+    --p-select-border-color: var(--form-valid);
 }
 
 .form-tooltip {
-    text-align: right;
     font-style: italic;
 
     &.error {

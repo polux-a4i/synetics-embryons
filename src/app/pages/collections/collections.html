@@ -194,27 +194,15 @@
 
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                             <!-- Line 1.7 -->
-                            <div class="md:col-4">
+                            <div class="md:col-12">
                                 <p-floatlabel variant="over">
                                     <p-select [options]="protocols" [(ngModel)]="selectedProtocol" id="collection-protocol" name="collection-protocol" optionLabel="name" />
                                     <label for="collection-protocol">Protocol</label>
                                 </p-floatlabel>
                             </div>
-                            <div class="md:col-4">
-                                <p-floatlabel variant="over">
-                                    <p-select [options]="experimentOptions" [(ngModel)]="selectedFirstExperiment" id="collection-experiment-1" name="collection-experiment-1" optionLabel="name" />
-                                    <label for="collection-experiment-1">Experiment 1</label>
-                                </p-floatlabel>
-                            </div>
-                            <div class="md:col-4">
-                                <p-floatlabel variant="over">
-                                    <p-select [options]="experimentOptions" [(ngModel)]="selectedLastExperiment" id="collection-experiment-n" name="collection-experiment-n" optionLabel="name" />
-                                    <label for="collection-experiment-n">Experiment n</label>
-                                </p-floatlabel>
-                            </div>
 
                             <!-- Line 1.8 -->
-                            <div class="md:col-4">
+                            <div class="md:col-12">
                                 <p-floatlabel variant="over">
                                     <p-select [options]="contracts" [(ngModel)]="selectedContract" id="collection-contract" name="collection-contract" optionLabel="name" aria-describedby="contract-error" invalid />
                                     <label for="collection-contract">Contract</label>
@@ -223,17 +211,40 @@
                                     <small>Ce champ comporte une erreur</small>
                                 </div>
                             </div>
-                            <div class="md:col-4">
+
+                            <!-- Line 1.9 -->
+                            <div class="md:col-6">
                                 <p-floatlabel variant="over">
-                                    <input pInputText id="experimental-field-1" type="experimental-field-1" size="small" class="field-valid" />
+                                    <p-select [options]="experimentOptions" [(ngModel)]="selectedFirstExperiment" id="collection-experiment-1" name="collection-experiment-1" optionLabel="name" class="field-valid" />
+                                    <label for="collection-experiment-1">Experiment 1</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="experimental-field-1" type="experimental-field-1" size="small" />
                                     <label for="experimental-field-1">Experimental field 1</label>
                                 </p-floatlabel>
                             </div>
-                            <div class="md:col-4">
+
+                            <!-- Line 1.10 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="experimentOptions" [(ngModel)]="selectedLastExperiment" id="collection-experiment-n" name="collection-experiment-n" optionLabel="name" />
+                                    <label for="collection-experiment-n">Experiment n</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
                                 <p-floatlabel variant="over">
                                     <input pInputText id="experimental-field-n" type="experimental-field-n" size="small" />
                                     <label for="experimental-field-n">Experimental field n</label>
                                 </p-floatlabel>
+                            </div>
+
+                            <div class="md:col-12">
+                                <p-button variant="outlined" [class]="'p-button-block'">
+                                    <span class="picon picon-plus-solid" pButtonIcon></span>
+                                    <span pButtonLabel>Add an experiment</span>
+                                </p-button>
                             </div>
                         </fieldset>
                     </form>
