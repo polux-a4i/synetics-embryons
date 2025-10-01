@@ -1,0 +1,9 @@
+[PATH_TO_LOGS]/*.log {
+    daily
+    rotate 14
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 777 dev dev
+}
