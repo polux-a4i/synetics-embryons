@@ -85,7 +85,10 @@ export class Collections implements OnInit {
     folliclesBetween: number | undefined;
     folliclesAbove: number | undefined;
 
+    opuHour: Date[] | undefined;
     opuRoomComment: string | undefined;
+
+    labMaturationHour: Date[] | undefined;
 
     maturationIncubators: SelectData[] | undefined;
     selectedMaturationIncubators: SelectData | undefined;
@@ -97,9 +100,13 @@ export class Collections implements OnInit {
 
     // Fourth step data
     bullIvfValue: any;
+    locationIvfIncubatorValue: any;
+    locationMaturingIncubatorValue: any;
 
     ivfLabs: SelectData[] | undefined;
     selectedIvfLab: SelectData | undefined;
+
+    ivfStartHour: Date[] | undefined;
 
     ivfProblemTypes: SelectData[] | undefined;
     selectedIvfProblemType: SelectData | undefined;
@@ -113,8 +120,10 @@ export class Collections implements OnInit {
     selectedIvfProtocol: SelectData | undefined;
 
     // Fifth step data
-    pfMobilityOptions: SelectData[] | undefined;
-    selectedPfMobility: SelectData | undefined;
+    pfMotilityOptions: SelectData[] | undefined;
+    selectedPfMotility: SelectData | undefined;
+
+    pfHour: Date[] | undefined;
 
     pfProblemTypes: SelectData[] | undefined;
     selectedPfProblemType: SelectData | undefined;

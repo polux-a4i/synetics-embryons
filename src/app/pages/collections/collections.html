@@ -319,13 +319,13 @@
                             <!-- Line 2.4 -->
                             <div class="md:col-6">
                                 <p-floatlabel variant="over">
-                                    <input pInputText id="opu-location-ivf-incubator" type="opu-location-ivf-incubator" size="small" />
+                                    <p-autocomplete [(ngModel)]="locationIvfIncubatorValue" name="opu-location-ivf-incubator" [suggestions]="searchItems" (completeMethod)="search($event)" />
                                     <label for="opu-location-ivf-incubator">Location IVF Incubator</label>
                                 </p-floatlabel>
                             </div>
                             <div class="md:col-6">
                                 <p-floatlabel variant="over">
-                                    <input pInputText id="opu-location-maturing-incubator" type="opu-location-maturing-incubator" size="small" />
+                                    <p-autocomplete [(ngModel)]="locationMaturingIncubatorValue" name="opu-location-maturing-incubator" [suggestions]="searchItems" (completeMethod)="search($event)" />
                                     <label for="opu-location-maturing-incubator">Location maturing incubator</label>
                                 </p-floatlabel>
                             </div>
@@ -413,7 +413,7 @@
                             </div>
                             <div class="md:col-6">
                                 <p-floatlabel variant="over">
-                                    <input pInputText id="opu-hour" type="opu-hour" size="small" />
+                                    <p-datepicker inputId="opu-hour" [(ngModel)]="opuHour" [timeOnly]="true" [stepMinute]="15" name="opu-hour" />
                                     <label for="opu-hour">OPU hour</label>
                                 </p-floatlabel>
                             </div>
@@ -509,7 +509,7 @@
                             </div>
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
-                                    <input pInputText id="lab-maturation-hour" type="lab-maturation-hour" size="small" />
+                                    <p-datepicker inputId="lab-maturation-hour" [(ngModel)]="labMaturationHour" [timeOnly]="true" [stepMinute]="15" name="lab-maturation-hour" />
                                     <label for="lab-maturation-hour">Hour of maturation</label>
                                 </p-floatlabel>
                             </div>
@@ -606,7 +606,7 @@
                             </div>
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
-                                    <input pInputText id="ivf-start-time" type="ivf-start-time" size="small" />
+                                    <p-datepicker inputId="ivf-start-time" [(ngModel)]="ivfStartHour" [timeOnly]="true" [stepMinute]="15" name="ivf-start-time" />
                                     <label for="ivf-start-time">IVF start time</label>
                                 </p-floatlabel>
                             </div>
@@ -663,13 +663,13 @@
                             <!-- Line 5.1 -->
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
-                                    <p-select [options]="pfMobilityOptions" [(ngModel)]="selectedPfMobility" id="pf-mobility" name="pf-mobility" optionLabel="name" />
-                                    <label for="pf-mobility">Post fertilization mobility</label>
+                                    <p-select [options]="pfMotilityOptions" [(ngModel)]="selectedPfMotility" id="pf-motility" name="pf-motility" optionLabel="name" />
+                                    <label for="pf-motility">Post fertilization motility</label>
                                 </p-floatlabel>
                             </div>
                             <div class="md:col-4">
                                 <p-floatlabel variant="over">
-                                    <input pInputText id="pf-hour" type="pf-hour" size="small" />
+                                    <p-datepicker inputId="pf-hour" [(ngModel)]="pfHour" [timeOnly]="true" [stepMinute]="15" name="pf-hour" />
                                     <label for="pf-hour">Hour</label>
                                 </p-floatlabel>
                             </div>
@@ -730,7 +730,7 @@
                             <div class="md:col-12">
                                 <p-floatlabel>
                                     <textarea pTextarea id="pf-problem-comment-2" [(ngModel)]="pfProblemComment2" rows="5" cols="30" style="resize: none" class="h-full" name="pf-problem-comment-2"></textarea>
-                                    <label for="pf-problem-comment-2">Problem precision</label>
+                                    <label for="pf-problem-comment-2">Comment</label>
                                 </p-floatlabel>
                             </div>
                         </fieldset>
@@ -921,7 +921,7 @@
                             <div class="md:col-12">
                                 <p-floatlabel variant="over">
                                     <input pInputText id="rp-freeze" type="rp-freeze" size="small" />
-                                    <label for="rp-freeze">Freezer</label>
+                                    <label for="rp-freeze">Freeze code</label>
                                 </p-floatlabel>
                             </div>
                         </fieldset>

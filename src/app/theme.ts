@@ -100,7 +100,8 @@ export const Synetics = definePreset(Aura, {
             colorScheme: {
                 light: {
                     root: {
-                        placeholderColor: '{primary.800}',
+                        color: '{primary.800}',
+                        placeholderColor: '{slate.500}',
                         background: '{slate.100}',
                         borderColor: '{slate.100}',
                         borderRadius: '.5rem'
