@@ -70,14 +70,14 @@
             </p-tablist>
             <p-tabpanels>
                 <p-tabpanel value="collection-info">
-                    <header class="tab-header">
-                        <h2 class="heading-3">
-                            <span class="picon picon-collection"></span>
-                            Collection information
-                        </h2>
-                    </header>
-
                     <form action="#">
+                        <header class="tab-header">
+                            <h2 class="heading-3">
+                                <span class="picon picon-collection"></span>
+                                Collection information
+                            </h2>
+                        </header>
+
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                             <!-- Line 1.1 -->
                             <div class="md:col-4">
@@ -251,14 +251,14 @@
                 </p-tabpanel>
 
                 <p-tabpanel value="collection-before-opu">
-                    <header class="tab-header">
-                        <h2 class="heading-3">
-                            <span class="picon picon-collection"></span>
-                            Before OPU
-                        </h2>
-                    </header>
-
                     <form action="#">
+                        <header class="tab-header">
+                            <h2 class="heading-3">
+                                <span class="picon picon-collection"></span>
+                                Before OPU
+                            </h2>
+                        </header>
+
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                             <legend class="md:col-12">
                                 <h3 class="heading-4">
@@ -334,14 +334,14 @@
                 </p-tabpanel>
 
                 <p-tabpanel value="collection-opu-ivm">
-                    <header class="tab-header">
-                        <h2 class="heading-3">
-                            <span class="picon picon-collection"></span>
-                            OPU/IVM
-                        </h2>
-                    </header>
-
                     <form action="#">
+                        <header class="tab-header">
+                            <h2 class="heading-3">
+                                <span class="picon picon-collection"></span>
+                                OPU/IVM
+                            </h2>
+                        </header>
+
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                             <legend class="md:col-12">
                                 <h3 class="heading-4">
@@ -526,14 +526,136 @@
                 </p-tabpanel>
 
                 <p-tabpanel value="collection-ivf">
-                    <header class="tab-header">
-                        <h2 class="heading-3">
-                            <span class="picon picon-collection"></span>
-                            IVF
-                        </h2>
-                    </header>
-
                     <form action="#">
+                        <div class="tab-header">
+                            <h2 class="heading-3">
+                                <span class="picon picon-collection"></span>
+                                IVF 1
+                            </h2>
+                        </div>
+
+                        <fieldset class="grid grid-cols-1 md:grid-cols-12">
+                            <!-- Line 4.1 -->
+                            <div class="md:col-12">
+                                <p-floatlabel variant="over">
+                                    <p-autocomplete [(ngModel)]="bullIvfValue" name="ivf-bull" [suggestions]="searchItems" (completeMethod)="search($event)" />
+                                    <label for="ivf-bull">Bull</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.2 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-batch" type="ivf-semen-batch" size="small" />
+                                    <label for="ivf-semen-batch">Semen batch</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-type" type="ivf-semen-type" size="small" />
+                                    <label for="ivf-semen-type">Semen type</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-conservation-mode" type="ivf-conservation-mode" size="small" />
+                                    <label for="ivf-conservation-mode">Conservation mode</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.3 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-prep-method" type="ivf-semen-prep-method" size="small" />
+                                    <label for="ivf-semen-prep-method">Semen preparation method</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-heparin" type="ivf-heparin" size="small" />
+                                    <label for="ivf-heparin">Heparin</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-semen-dose" type="ivf-semen-dose" size="small" />
+                                    <label for="ivf-semen-dose">Semen dose</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.4 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfLabs" [(ngModel)]="selectedIvfLab" id="ivf-selected" name="ivf-selected" optionLabel="name" />
+                                    <label for="ivf-selected">IVF Lab</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-cumulus-quality" type="ivf-cumulus-quality" size="small" />
+                                    <label for="ivf-cumulus-quality">Cumulus quality</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.5 -->
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <input pInputText id="ivf-cumulus-quality" type="ivf-cumulus-quality" size="small" />
+                                    <label for="ivf-cumulus-quality">Nbr of discarded oocytes</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-datepicker inputId="ivf-start-time" [(ngModel)]="ivfStartHour" [timeOnly]="true" [stepMinute]="15" name="ivf-start-time" />
+                                    <label for="ivf-start-time">IVF start time</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-4">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfProblemTypes" [(ngModel)]="selectedIvfProblemType" id="ivf-selected-problem" name="ivf-selected-problem" optionLabel="name" />
+                                    <label for="ivf-selected-problem">Problem</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.6 -->
+                            <div class="md:col-12">
+                                <p-floatlabel>
+                                    <textarea pTextarea id="ivf-problem-comment" [(ngModel)]="ivfProblemComment" rows="5" cols="30" style="resize: none" class="h-full" name="ivf-problem-comment"></textarea>
+                                    <label for="ivf-">Problem precision</label>
+                                </p-floatlabel>
+                            </div>
+
+                            <!-- Line 4.7 -->
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfIncubators" [(ngModel)]="selectedIvfIncubator" id="ivf-incubator" name="ivf-incubator" optionLabel="name" />
+                                    <label for="ivf-incubator">IVF Incubators</label>
+                                </p-floatlabel>
+                            </div>
+                            <div class="md:col-6">
+                                <p-floatlabel variant="over">
+                                    <p-select [options]="ivfProtocols" [(ngModel)]="selectedIvfProtocol" id="ivf-protocol" name="ivf-protocol" optionLabel="name" />
+                                    <label for="ivf-protocol">IVF Protocols</label>
+                                </p-floatlabel>
+                            </div>
+                        </fieldset>
+
+                        <hr class="separator xl">
+
+                        <div class="tab-header tab-extra-header">
+                            <h2 class="heading-3">
+                                <span class="picon picon-collection"></span>
+                                IVF 2
+                            </h2>
+
+                            <div class="tab-header-action">
+                                <p-button variant="outlined">
+                                    <span pButtonLabel>Delete IVF</span>
+                                    <span class="picon picon-trash-solid-full" pButtonIcon></span>
+                                </p-button>
+                            </div>
+                        </div>
+
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                             <!-- Line 4.1 -->
                             <div class="md:col-12">
@@ -651,14 +773,14 @@
                 </p-tabpanel>
 
                 <p-tabpanel value="collection-post-fert">
-                    <header class="tab-header">
-                        <h2 class="heading-3">
-                            <span class="picon picon-collection"></span>
-                            Post-fertilization
-                        </h2>
-                    </header>
-
                     <form action="#">
+                        <header class="tab-header">
+                            <h2 class="heading-3">
+                                <span class="picon picon-collection"></span>
+                                Post-fertilization
+                            </h2>
+                        </header>
+
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                             <!-- Line 5.1 -->
                             <div class="md:col-4">
@@ -780,14 +902,14 @@
                 </p-tabpanel>
 
                 <p-tabpanel value="collection-report">
-                    <header class="tab-header">
-                        <h2 class="heading-3">
-                            <span class="picon picon-collection"></span>
-                            Collection report
-                        </h2>
-                    </header>
-
                     <form action="#">
+                        <header class="tab-header">
+                            <h2 class="heading-3">
+                                <span class="picon picon-collection"></span>
+                                Collection report
+                            </h2>
+                        </header>
+
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                            <legend class="md:col-12">
                                 <h3 class="heading-4">
@@ -921,7 +1043,7 @@
                             <div class="md:col-12">
                                 <p-floatlabel variant="over">
                                     <input pInputText id="rp-freeze" type="rp-freeze" size="small" />
-                                    <label for="rp-freeze">Freeze code</label>
+                                    <label for="rp-freeze">Freeze</label>
                                 </p-floatlabel>
                             </div>
                         </fieldset>

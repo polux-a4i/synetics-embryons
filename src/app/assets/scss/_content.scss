@@ -111,6 +111,16 @@ body {
     font-weight: var(--body-regular-weight);
 }
 
+@mixin make-sep() {
+    margin-block: 1rem;
+    border: none;
+    border-top: 1px solid var(--p-surface-200);
+
+    &.xl {
+        margin-block: 3rem;
+    }
+}
+
 @mixin make-table() {
     display: grid;
     gap: 1em;
@@ -190,6 +200,10 @@ h1, h2, h3, h4, h5, p {
     table {
         @include make-table;
     }
+
+    hr {
+        @include make-sep;
+    }
 }
 
 .heading-1,
@@ -220,6 +234,11 @@ h1, h2, h3, h4, h5, p {
 .paragraph,
 .content .paragraph {
     @include make-paragraph;
+}
+
+.separator,
+.content .separator {
+    @include make-sep;
 }
 
 .o-list,

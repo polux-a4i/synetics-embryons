@@ -43,6 +43,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.picon-trash-solid-full:before {
+  content: "\e925";
+}
 .picon-magnifying-glass-solid-full:before {
   content: "\e924";
 }
