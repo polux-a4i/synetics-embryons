@@ -48,14 +48,9 @@ if [ "$ENV" != "LOC" ]; then
     fi
 fi
 
-if which pnpm; then
-    pnpm install || exit 4;
-    pnpm run build || exit 5;
-else
-    yarn install || exit 4;
-    yarn run build || exit 5;
-fi
-
+# With no corepack available : nvm setup + curl -L https://unpkg.com/@pnpm/self-installer | node
+pnpm install || exit 4;
+pnpm run build || exit 5;
 
 
 exit 0
