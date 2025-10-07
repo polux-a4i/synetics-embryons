@@ -1,0 +1,32 @@
+{
+    "name": "artwai/testcreate",
+    "description": "Test de Création de projet",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "artwaï",
+            "email": "sissa.dmine@artwai.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "composer/installers": "*",
+        "symfony/dotenv": "^5.4.3",
+        "ext-curl": "*",
+        "ext-mysqli": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Bin\\Composer\\": "bin/composer"
+        }
+    }
+}
