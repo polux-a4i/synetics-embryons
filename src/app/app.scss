@@ -7,7 +7,7 @@
     .app-main ::ng-deep router-outlet + * {
         display: block;
 
-        main {
+        #page-content {
             min-height: 100dvh;
             min-height: 100vh;
             padding: 2rem;
