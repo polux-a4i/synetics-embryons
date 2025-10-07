@@ -13,10 +13,43 @@ import { CollectionBanner } from '../../components/collection-banner/collection-
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TextareaModule } from 'primeng/textarea';
 import { CollectionFooter } from '../../components/collection-footer/collection-footer';
+import { TableModule } from 'primeng/table';
 
 interface SelectData {
     name: string;
     code: string;
+}
+
+enum FreshStatus {
+    Fresh = "Fresh",
+    Frozen = "Frozen"
+}
+
+enum BullSex {
+    Male = "M",
+    Female = "F"
+}
+
+interface Embryo {
+    id: string;
+    stage: number;
+    quality: number;
+    freshStatus: FreshStatus;
+    firstBull: string; // ID
+    secondBull?: string; // ID
+    sex: BullSex;
+    cap: string;
+    status: string;
+    thawingProtocol: string;
+    tank: string;
+    recipient?: string;
+    recOwner?: string; // ID ?
+    calvingRank?: string;
+    transfertDate?: string;
+    transferPlace?: string;
+    transferOperator?: string; // ID ?
+    pregnancyCheck?: string;
+    breedingStatus?: string;
 }
 
 @Component({
@@ -34,7 +67,8 @@ interface SelectData {
         DatePickerModule,
         AutoCompleteModule,
         CheckboxModule,
-        ButtonModule
+        ButtonModule,
+        TableModule
     ],
     templateUrl: './collections.html',
     styleUrl: './collections.scss',
@@ -135,6 +169,10 @@ export class Collections implements OnInit {
 
     pfProblemComment2: string | undefined;
 
+    // Table data
+    embryos!: Embryo[];
+    selectedEmbryos!: Embryo[];
+
     ngOnInit() {
         // First step data
         this.operators = [
@@ -172,6 +210,56 @@ export class Collections implements OnInit {
             { name: 'Contract 4', code: 'contract-4' },
             { name: 'Contract 5', code: 'contract-5' }
         ];
+        this.embryos = [
+            {
+                id: "35025070126001",
+                stage: 4,
+                quality: 1,
+                freshStatus: FreshStatus.Frozen,
+                firstBull: "VOLTAIRE - FR2941423468 - 19",
+                sex: BullSex.Male,
+                cap: "ORA",
+                status: "EOR",
+                thawingProtocol: "EG",
+                tank: "PG01",
+            },
+            {
+                id: "35025070126002",
+                stage: 4,
+                quality: 1,
+                freshStatus: FreshStatus.Fresh,
+                firstBull: "VOLTAIRE - FR2941423468 - 19",
+                sex: BullSex.Female,
+                cap: "ORA",
+                status: "EOR",
+                thawingProtocol: "EG",
+                tank: "PG01",
+            },
+            {
+                id: "35025070126003",
+                stage: 4,
+                quality: 1,
+                freshStatus: FreshStatus.Fresh,
+                firstBull: "VOLTAIRE - FR2941423468 - 19",
+                sex: BullSex.Male,
+                cap: "ORA",
+                status: "EOR",
+                thawingProtocol: "EG",
+                tank: "PG01",
+            },
+            {
+                id: "35025070126004",
+                stage: 4,
+                quality: 1,
+                freshStatus: FreshStatus.Frozen,
+                firstBull: "VOLTAIRE - FR2941423468 - 19",
+                sex: BullSex.Male,
+                cap: "ORA",
+                status: "EOR",
+                thawingProtocol: "EG",
+                tank: "PG01",
+            }
+        ]
     }
 
     search(event: AutoCompleteCompleteEvent) {

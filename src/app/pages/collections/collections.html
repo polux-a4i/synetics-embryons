@@ -58,7 +58,7 @@
                         Last edit <time datetime="10.10.2024">10.10.2024</time>
                     </small>
                 </p-tab>
-                <p-tab value="embryos" disabled>
+                <p-tab value="embryos">
                     <div class="heading-5">
                         Embryos
                     </div>
@@ -1048,6 +1048,69 @@
                             </div>
                         </fieldset>
                     </form>
+                </p-tabpanel>
+
+                <p-tabpanel value="embryos">
+                    <div class="table-wrapper">
+                        <p-table [value]="embryos" [(selection)]="selectedEmbryos" [scrollable]="true" dataKey="id" scrollHeight="400px">
+                            <ng-template #header>
+                                <tr>
+                                    <th style="min-width:20ch;" pFrozenColumn>
+                                        <div class="form-checkbox">
+                                            <p-tableHeaderCheckbox />
+                                            <span>Embryo number</span>
+                                        </div>
+                                    </th>
+                                    <th style="min-width:8ch">Stage</th>
+                                    <th style="min-width:8ch">Quality</th>
+                                    <th style="min-width:16ch">Fresh / Frozen</th>
+                                    <th style="min-width:26ch">Bull 1</th>
+                                    <th style="min-width:16ch">Bull 2</th>
+                                    <th style="min-width:8ch">Sex</th>
+                                    <th style="min-width:8ch">Cap</th>
+                                    <th style="min-width:8ch">Status</th>
+                                    <th style="min-width:24ch">Thawing protocol</th>
+                                    <th style="min-width:16ch">Tank</th>
+                                    <th style="min-width:16ch">Recipient</th>
+                                    <th style="min-width:16ch">Rec Owner</th>
+                                    <th style="min-width:16ch">Calving rank</th>
+                                    <th style="min-width:16ch">Transfert date</th>
+                                    <th style="min-width:16ch">Transfert place</th>
+                                    <th style="min-width:16ch">Transfert operator</th>
+                                    <th style="min-width:16ch">Pregnancy check</th>
+                                    <th style="min-width:16ch">Breeding status</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template #body let-embryo>
+                                <tr>
+                                    <td pFrozenColumn>
+                                        <div class="form-checkbox">
+                                            <p-tableCheckbox [value]="embryo" />
+                                            <span>{{ embryo.id }}</span>
+                                        </div>
+                                    </td>
+                                    <td style="min-width:8ch">{{ embryo.stage }}</td>
+                                    <td style="min-width:8ch">{{ embryo.quality }}</td>
+                                    <td style="min-width:16ch">{{ embryo.freshStatus }}</td>
+                                    <td style="min-width:26ch">{{ embryo.firstBull }}</td>
+                                    <td style="min-width:16ch">{{ embryo.secondBull ?? '--' }}</td>
+                                    <td style="min-width:8ch">{{ embryo.sex }}</td>
+                                    <td style="min-width:8ch">{{ embryo.cap }}</td>
+                                    <td style="min-width:8ch">{{ embryo.status }}</td>
+                                    <td style="min-width:24ch">{{ embryo.thawingProtocol }}</td>
+                                    <td style="min-width:16ch">{{ embryo.tank }}</td>
+                                    <td style="min-width:16ch">{{ embryo.recipient ?? '--' }}</td>
+                                    <td style="min-width:16ch">{{ embryo.recOwner ?? '--' }}</td>
+                                    <td style="min-width:16ch">{{ embryo.calvingRank ?? '--' }}</td>
+                                    <td style="min-width:16ch">{{ embryo.transfertDate ?? '--' }}</td>
+                                    <td style="min-width:16ch">{{ embryo.transferPlace ?? '--' }}</td>
+                                    <td style="min-width:16ch">{{ embryo.transferOperator ?? '--' }}</td>
+                                    <td style="min-width:16ch">{{ embryo.pregnancyCheck ?? '--' }}</td>
+                                    <td style="min-width:16ch">{{ embryo.breedingStatus ?? '--' }}</td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
                 </p-tabpanel>
             </p-tabpanels>
         </p-tabs>

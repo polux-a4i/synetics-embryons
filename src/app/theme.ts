@@ -174,6 +174,13 @@ export const Synetics = definePreset(Aura, {
                 }
             `
         },
+        checkbox: {
+            css: () => `
+                .p-checkbox {
+                    vertical-align: text-top;
+                }
+            `
+        },
         autocomplete: {
             css: () => `
                 .p-autocomplete {
@@ -223,7 +230,7 @@ export const Synetics = definePreset(Aura, {
             css: () => `
                 .p-tabs {
                     display: grid;
-                    grid-template-columns: auto 1fr;
+                    grid-template-columns: auto minmax(0, 1fr);
                     gap: .5rem;
                 }
                 .p-tablist-tab-list {
@@ -251,6 +258,27 @@ export const Synetics = definePreset(Aura, {
             content: {
                 padding: '.5rem'
             }
+        },
+        datatable: {
+            colorScheme: {
+                light: {
+                    header: {
+                        background: '{surface.0}',
+                    },
+                    headerCell: {
+                        background: '{primary.800}',
+                        color: '{surface.0}'
+                    },
+                    columnTitle: {
+                        fontWeight: 'bold'
+                    }
+                }
+            },
+            css: () => `
+                .p-datatable-scrollable td.p-datatable-frozen-column {
+                    background-color: var(--p-datatable-row-background);
+                }
+            `
         }
     }
 });
