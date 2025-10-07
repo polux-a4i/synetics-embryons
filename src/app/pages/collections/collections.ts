@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, computed, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AutoCompleteCompleteEvent, AutoCompleteModule } from 'primeng/autocomplete';
 import { ButtonModule } from 'primeng/button';
@@ -8,12 +8,12 @@ import { FloatLabel } from 'primeng/floatlabel';
 import { InputTextModule } from 'primeng/inputtext';
 import { SelectModule } from 'primeng/select';
 import { TabsModule } from 'primeng/tabs';
-import { Footer } from '../../components/footer/footer';
 import { CollectionBanner } from '../../components/collection-banner/collection-banner';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TextareaModule } from 'primeng/textarea';
 import { CollectionFooter } from '../../components/collection-footer/collection-footer';
 import { TableModule } from 'primeng/table';
+import { EmbryoTransferService } from '../../services/embryo-transfer';
 
 interface SelectData {
     name: string;
@@ -30,7 +30,7 @@ enum BullSex {
     Female = "F"
 }
 
-interface Embryo {
+export interface Embryo {
     id: string;
     stage: number;
     quality: number;
@@ -173,6 +173,8 @@ export class Collections implements OnInit {
     embryos!: Embryo[];
     selectedEmbryos!: Embryo[];
 
+    constructor(private embryoTransferService: EmbryoTransferService) {}
+
     ngOnInit() {
         // First step data
         this.operators = [
@@ -264,5 +266,10 @@ export class Collections implements OnInit {
 
     search(event: AutoCompleteCompleteEvent) {
         this.searchItems = [...Array(10).keys()].map(item => event.query + '-' + item);
+    }
+
+    // Called when selection of the table changes
+    onSelectedEmbryosChange(): void {
+        this.embryoTransferService.setSelectedEmbryos(this.selectedEmbryos);
     }
 }

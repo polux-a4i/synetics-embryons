@@ -1,8 +1,12 @@
 .c-pre-footer {
     position: sticky;
     bottom: 0;
-    padding-block: 1.5rem;
-    background-color: var(--p-content-background);
+    z-index: 10;
+
+    .c-nav-w {
+        padding-block: 1.5rem;
+        background-color: var(--p-content-background);
+    }
 
     .c-nav {
         display: flex;
@@ -16,4 +20,10 @@
             gap: 1rem;
         }
     }
+}
+
+.c-footer-form {
+    padding-block: .75rem;
+    color: var(--p-surface-0);
+    background-color: var(--p-primary-800);
 }
