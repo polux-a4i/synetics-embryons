@@ -15,32 +15,32 @@
             @if (!hideMenu) {
                 <menu class="reset">
                     <li>
-                        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/collections" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                        <a routerLink="/collections" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
                             Collections
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/embryos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                        <a routerLink="/embryos" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
                             Embryos
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/females" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                        <a routerLink="/females" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
                             Females
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/straws" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                        <a routerLink="/straws" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
                             Straws management
                         </a>
                     </li>
                     <li>
-                        <a routerLink="/invoicing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                        <a routerLink="/invoicing" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
                             Invoicing
                         </a>
                     </li>
@@ -48,14 +48,14 @@
 
                 <menu class="reset settings-menu">
                     <li>
-                        <p-button [rounded]="true">
+                        <p-button [rounded]="true" ariaLabel="Paramètres">
                             <ng-template #icon>
                                 <span class="picon picon-gear-solid-full"></span>
                             </ng-template>
                         </p-button>
                     </li>
                     <li>
-                        <p-button [rounded]="true">
+                        <p-button [rounded]="true" ariaLabel="Compte">
                             <ng-template #icon>
                                 <span class="picon picon-user-solid"></span>
                             </ng-template>
