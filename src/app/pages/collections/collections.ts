@@ -14,6 +14,8 @@ import { TextareaModule } from 'primeng/textarea';
 import { CollectionFooter } from '../../components/collection-footer/collection-footer';
 import { TableModule } from 'primeng/table';
 import { EmbryoTransferService } from '../../services/embryo-transfer';
+import { DialogModule } from 'primeng/dialog';
+import { EmbryoDataTable } from '../../components/embryo-data-table/embryo-data-table';
 
 interface SelectData {
     name: string;
@@ -57,6 +59,7 @@ export interface Embryo {
     imports: [
         CollectionBanner,
         CollectionFooter,
+        EmbryoDataTable,
         TabsModule,
         InputTextModule,
         InputNumberModule,
@@ -68,7 +71,8 @@ export interface Embryo {
         AutoCompleteModule,
         CheckboxModule,
         ButtonModule,
-        TableModule
+        TableModule,
+        DialogModule
     ],
     templateUrl: './collections.html',
     styleUrl: './collections.scss',
@@ -168,6 +172,9 @@ export class Collections implements OnInit {
     selectedPfDevIncubator: SelectData | undefined;
 
     pfProblemComment2: string | undefined;
+
+    // Sixth step data
+    embryosModalVisible: boolean = false;
 
     // Table data
     embryos!: Embryo[];
@@ -271,5 +278,9 @@ export class Collections implements OnInit {
     // Called when selection of the table changes
     onSelectedEmbryosChange(): void {
         this.embryoTransferService.setSelectedEmbryos(this.selectedEmbryos);
+    }
+
+    showEmbryosDialog() {
+        this.embryosModalVisible = true;
     }
 }

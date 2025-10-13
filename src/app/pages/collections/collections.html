@@ -991,12 +991,46 @@
 
                             <!-- Line 6.5 -->
                             <div class="md:col-12">
-                                <p-button variant="outlined" [class]="'p-button-block'">
+                                <p-button variant="outlined" [class]="'p-button-block'" (click)="showEmbryosDialog()">
                                     <span class="picon picon-share-solid-full" pButtonIcon></span>
                                     <span pButtonLabel>Take out the embryos</span>
                                 </p-button>
                             </div>
                         </fieldset>
+
+                        <p-dialog [modal]="true" [(visible)]="embryosModalVisible" [style]="{ width: '50%' }">
+                            <ng-template #header>
+                                <div class="dialog-header">
+                                    <span class="picon picon-share-solid-full"></span>
+                                    <h2 class="heading-3">
+                                        Take out the embryos
+                                    </h2>
+                                </div>
+                            </ng-template>
+
+                            <ng-template #footer>
+                                <footer class="c-dialog-footer">
+                                    <div class="c-nav">
+                                        <menu class="reset">
+                                            <li>
+                                                <p-button variant="outlined" (click)="embryosModalVisible = false">
+                                                    <span pButtonLabel>Cancel without saving</span>
+                                                    <span class="picon picon-xmark" pButtonIcon></span>
+                                                </p-button>
+                                            </li>
+                                            <li>
+                                                <p-button type="link" severity="success" (click)="embryosModalVisible = false">
+                                                    <span pButtonLabel>Save</span>
+                                                    <span class="picon picon-save" pButtonIcon></span>
+                                                </p-button>
+                                            </li>
+                                        </menu>
+                                    </div>
+                                </footer>
+                            </ng-template>
+
+                            <syn-embryo-data-table />
+                        </p-dialog>
 
                         <fieldset class="grid grid-cols-1 md:grid-cols-12">
                             <!-- Line 6.6 -->

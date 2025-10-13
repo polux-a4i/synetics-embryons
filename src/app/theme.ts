@@ -259,6 +259,15 @@ export const Synetics = definePreset(Aura, {
                 padding: '.5rem'
             }
         },
+        dialog: {
+            colorScheme: {
+                light: {
+                    root: {
+                        color: '{primary.800}'
+                    }
+                }
+            }
+        },
         datatable: {
             colorScheme: {
                 light: {

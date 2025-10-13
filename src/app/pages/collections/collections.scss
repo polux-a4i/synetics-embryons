@@ -14,9 +14,8 @@ fieldset {
     }
 }
 
-.c-footer {
-    margin-top: 2.25rem;
-
+.c-footer,
+.c-dialog-footer {
     .c-nav {
         display: flex;
         justify-content: end;
@@ -29,4 +28,8 @@ fieldset {
             gap: 1rem;
         }
     }
+}
+
+.c-footer {
+    margin-top: 2.25rem;
 }
