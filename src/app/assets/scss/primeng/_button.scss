@@ -12,6 +12,7 @@
 
     .p-button-left {
         &, button {
+            display: flex;
             justify-content: left !important;
         }
     }
