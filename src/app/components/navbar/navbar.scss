@@ -1,5 +1,11 @@
 @use '../../assets/scss/media';
 
+@include media.xs {
+    .logo {
+        width: 8rem;
+    }
+}
+
 nav {
     padding-inline: 4rem;
     padding-block: 2rem;
@@ -7,10 +13,6 @@ nav {
     @include media.xs {
         padding-inline: 0;
         padding-block: 1.6rem;
-
-        .logo {
-            width: 8rem;
-        }
     }
 
     &:not(.has-bg) {
@@ -35,19 +37,8 @@ nav {
 }
 
 menu {
-    display: flex;
-    gap: 1.5rem;
-    list-style-type: none;
     font-size: .95em;
     font-weight: 600;
-
-    &.settings-menu {
-        gap: .5rem;
-
-        .picon {
-            font-size: 1.2em;
-        }
-    }
 
     li {
         a {
@@ -68,6 +59,39 @@ menu {
                 text-decoration-thickness: .2rem;
             }
         }
+    }
+}
+
+menu.desktop,
+menu.settings {
+    display: flex;
+    gap: 1.5rem;
+}
+
+menu.mobile {
+    display: grid;
+    gap: .5rem;
+    margin-block: 5rem 2.5rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: .75ch;
+
+        &::before {
+            display: block;
+            font-family: picon;
+            content: '\e901';
+            font-size: 80%;
+        }
+    }
+}
+
+menu.settings {
+    gap: .5rem;
+
+    .picon {
+        font-size: 1.2em;
     }
 }
 

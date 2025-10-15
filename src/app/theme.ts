@@ -269,6 +269,17 @@ export const Synetics = definePreset(Aura, {
                     background-color: var(--p-datatable-row-background);
                 }
             `
+        },
+        drawer: {
+            colorScheme: {
+                light: {
+                    root: {
+                        color: '{surface.0}',
+                        background: '{primary.800}',
+                        borderColor: '{primary.800}'
+                    },
+                }
+            }
         }
     }
 });
