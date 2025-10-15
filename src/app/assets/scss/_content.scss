@@ -25,7 +25,7 @@
     --body-small-weight: 400;
 }
 
-@include media.md {
+@include media.sm {
     :root {
         // Headings
         --h1-size: 1.8em;

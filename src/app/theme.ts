@@ -47,6 +47,13 @@ export const Synetics = definePreset(Aura, {
                                 color: '{primary.800}'
                             },
                         },
+                        contrast: {
+                            background: '{primary.900}',
+                            borderColor: '{primary.900}',
+                            focusRing: {
+                                color: '{primary.900}'
+                            },
+                        }
                     },
                     outlined: {
                         primary: {
@@ -226,33 +233,7 @@ export const Synetics = definePreset(Aura, {
             tabpanel: {
                 padding: '1.6rem',
                 color: '{primary.800}',
-            },
-            css: () => `
-                .p-tabs {
-                    display: grid;
-                    grid-template-columns: auto minmax(0, 1fr);
-                    gap: .5rem;
-                }
-                .p-tablist-tab-list {
-                    flex-flow: column;
-                    width: fit-content;
-                    gap: .5rem;
-                }
-                .p-tabpanels {
-                    border-radius: 0 3rem 0 0;
-                }
-                .p-tab {
-                    border-radius: .5rem 0 0 .5rem;
-                    opacity: .6;
-                }
-                .p-tab-active,
-                .p-tab:hover {
-                    opacity: 1;
-                }
-                .p-tab.p-disabled {
-                    color: var(--p-surface-300)
-                }
-            `
+            }
         },
         popover: {
             content: {

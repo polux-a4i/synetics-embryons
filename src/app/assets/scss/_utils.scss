@@ -4,8 +4,13 @@
     }
 }
 
-.text-center {
-    text-align: center;
+.text {
+    &-center {
+        text-align: center;
+    }
+    &-right {
+        text-align: right;
+    }
 }
 
 .sr-only {

@@ -1,6 +1,17 @@
+@use '../../assets/scss/media';
+
 nav {
     padding-inline: 4rem;
     padding-block: 2rem;
+
+    @include media.xs {
+        padding-inline: 0;
+        padding-block: 1.6rem;
+
+        .logo {
+            width: 8rem;
+        }
+    }
 
     &:not(.has-bg) {
         position: fixed;

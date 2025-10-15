@@ -1,8 +1,8 @@
+@use 'assets/scss/media';
+
 .app-wrapper {
     height: 100dvh;
     height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr;
 
     .app-main ::ng-deep router-outlet + * {
         display: block;
@@ -10,7 +10,11 @@
         #page-content {
             min-height: 100dvh;
             min-height: 100vh;
-            padding: 2rem;
+            padding-bottom: 2rem;
+
+            @include media.sm {
+                padding-top: 2rem;
+            }
 
             &:not(.bg-image) {
                 background-image: linear-gradient(

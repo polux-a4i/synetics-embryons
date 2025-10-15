@@ -19,6 +19,7 @@ export const appConfig: ApplicationConfig = {
                 preset: Synetics,
                 options: {
                     darkModeSelector: false,
+                    cssLayer: true
                 }
             }
         })

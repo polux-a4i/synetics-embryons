@@ -1,3 +1,5 @@
+@use '../../assets/scss/media';
+
 .footer {
     padding-inline: 4rem;
     padding-block: 2rem;
@@ -5,10 +7,26 @@
     background-color: var(--p-primary-800);
 
     .nav-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1.6rem;
+        display: grid;
+        gap: 1.2rem;
+
+        .logo svg {
+            display: inline-block;
+        }
+
+        @include media.sm {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.6rem;
+        }
+    }
+
+    .nav-inner,
+    .logo {
+        @include media.xs {
+            text-align: center;
+        }
     }
 }
 
@@ -18,6 +36,10 @@ menu {
     list-style-type: none;
     font-size: .9em;
     font-weight: 600;
+
+    @include media.xs {
+        justify-content: center;
+    }
 
     li {
         a {

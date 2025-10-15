@@ -13,7 +13,7 @@
             </div>
 
             @if (!hideMenu) {
-                <menu class="reset">
+                <menu class="reset xs:hidden">
                     <li>
                         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
                             Home
@@ -48,20 +48,27 @@
 
                 <menu class="reset settings-menu">
                     <li>
-                        <p-button [rounded]="true" ariaLabel="Paramètres">
+                        <p-button [rounded]="true" ariaLabel="Paramètres" severity="contrast">
                             <ng-template #icon>
                                 <span class="picon picon-gear-solid-full"></span>
                             </ng-template>
                         </p-button>
                     </li>
-                    <li>
-                        <p-button [rounded]="true" ariaLabel="Compte">
+                    <li class="xs:hidden">
+                        <p-button [rounded]="true" ariaLabel="Compte" severity="contrast">
                             <ng-template #icon>
                                 <span class="picon picon-user-solid"></span>
                             </ng-template>
                         </p-button>
                     </li>
-                    <li>
+                    <li class="md:hidden">
+                        <p-button [rounded]="true" ariaLabel="Accéder au menu" severity="contrast">
+                            <ng-template #icon>
+                                <span class="picon picon-menu"></span>
+                            </ng-template>
+                        </p-button>
+                    </li>
+                    <li class="xs:hidden">
                         <syn-lang />
                     </li>
                 </menu>
