@@ -1,0 +1,66 @@
+@use '../../assets/scss/media';
+
+.footer {
+    padding-inline: 4rem;
+    padding-block: 2rem;
+    color: var(--p-surface-0);
+    background-color: var(--p-primary-800);
+
+    .nav-inner {
+        display: grid;
+        gap: 1.2rem;
+
+        .logo svg {
+            display: inline-block;
+        }
+
+        @include media.sm {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.6rem;
+        }
+    }
+
+    .nav-inner,
+    .logo {
+        @include media.xs {
+            text-align: center;
+        }
+    }
+}
+
+menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style-type: none;
+    font-size: .9em;
+    font-weight: 600;
+
+    @include media.xs {
+        justify-content: center;
+    }
+
+    li {
+        a {
+            cursor: pointer;
+            color: var(--p-surface-300);
+            text-decoration: none;
+
+            &.active {
+                text-decoration: underline;
+                text-decoration-color: var(--p-primary-400);
+                text-underline-offset: .1rem;
+                pointer-events: none;
+            }
+
+            &:hover,
+            &:focus-visible {
+                color: var(--p-surface-0);
+                text-decoration: underline;
+                text-decoration-color: var(--p-surface-0);
+                text-decoration-thickness: .1rem;
+            }
+        }
+    }
+}

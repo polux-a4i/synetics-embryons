@@ -1,0 +1,82 @@
+<footer class="c-pre-footer">
+    @if ( hasSelectedEmbryos ) {
+        <div class="c-footer-form">
+            <div class="container">
+                <fieldset class="grid xs:grid-cols-2">
+                    <div class="form-group">
+                        <p-datepicker [(ngModel)]="transferDate" name="transfer-date" [iconDisplay]="'input'" [showIcon]="true" placeholder="Date">
+                            <ng-template #inputicon let-clickCallBack="clickCallBack">
+                                <span class="picon picon-calendar" (click)="clickCallBack($event)"></span>
+                            </ng-template>
+                        </p-datepicker>
+                    </div>
+                    <div class="form-group">
+                        <p-autocomplete [(ngModel)]="transferPlace" name="transfer-place" [suggestions]="searchItems" (completeMethod)="search($event)" placeholder="Transfer place" />
+                    </div>
+                    <div class="form-group">
+                        <p-autocomplete [(ngModel)]="recipientOwner" name="transfer-recipient-owner" [suggestions]="searchItems" (completeMethod)="search($event)" placeholder="Recipient owner" />
+                    </div>
+                    <div class="form-group">
+                        <p-select [options]="transferIncubators" [(ngModel)]="selectedTransferIncubator" id="pf-dev-incubator" name="pf-dev-incubator" optionLabel="name" placeholder="Operator" />
+                    </div>
+                    <div class="form-group">
+                        <p-select [options]="transferThawingProtocols" [(ngModel)]="selectedTransferThawingProtocol" id="pf-dev-incubator" name="pf-dev-incubator" optionLabel="name" placeholder="Thawing protocol" />
+                    </div>
+                    <div class="form-group">
+                        <p-select [options]="transferHeatSyncProtocols" [(ngModel)]="selectedTransferHeatSyncProtocol" id="pf-dev-incubator" name="pf-dev-incubator" optionLabel="name" placeholder="Heat sync protocol" />
+                    </div>
+                    <div class="form-group xs:col-2 text-right">
+                        <p-button type="submit" severity="success">
+                            <span pButtonLabel>Register transfer</span>
+                        </p-button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    }
+
+    <div class="c-nav-w" aria-label="Collections">
+        <div class="container">
+            <div class="c-nav">
+                <ol class="reset">
+                    <li>
+                        <p-button type="link" variant="outlined">
+                            <span class="picon picon-arrow-left-solid" pButtonIcon></span>
+                            <span pButtonLabel class="xs:hidden">Previous collection</span>
+                        </p-button>
+                    </li>
+                    <li>
+                        <p-button type="link" variant="outlined">
+                            <span pButtonLabel class="xs:hidden">Next collection</span>
+                            <span class="picon picon-arrow-right-solid" pButtonIcon></span>
+                        </p-button>
+                    </li>
+                </ol>
+                <menu class="reset">
+                    <li>
+                        <p-button type="link">
+                            <span class="picon picon-envelope" pButtonIcon></span>
+                            <span pButtonLabel>
+                                <span class="xs:hidden">
+                                    Collection certificate
+                                </span>
+                                email
+                            </span>
+                        </p-button>
+                    </li>
+                    <li>
+                        <p-button type="link">
+                            <span class="picon picon-file-pdf-solid" pButtonIcon></span>
+                            <span pButtonLabel>
+                                <span class="xs:hidden">
+                                    Collection certificate
+                                </span>
+                                PDF
+                            </span>
+                        </p-button>
+                    </li>
+                </menu>
+            </div>
+        </div>
+    </div>
+</footer>

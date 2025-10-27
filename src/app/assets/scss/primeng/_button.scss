@@ -1,0 +1,19 @@
+@layer primeng {
+    p-button {
+        display: inline-block;
+    }
+
+    .p-button-block {
+        &, button {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    .p-button-left {
+        &, button {
+            display: flex;
+            justify-content: left !important;
+        }
+    }
+}

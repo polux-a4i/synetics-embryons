@@ -1,15 +1,22 @@
 export default `<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>Test</title>
-  <base href="/synetics-embryons/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="styles-5INURTSO.css"></head>
+    <meta charset="utf-8">
+    <title>Synetics ET</title>
+    <base href="/synetics-embryons/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="/ico/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/svg+xml" href="/ico/favicon.svg"/>
+    <link rel="shortcut icon" href="/ico/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-touch-icon.png"/>
+    <meta name="apple-mobile-web-app-title" content="Synetics ET"/>
+    <link rel="manifest" href="/ico/site.webmanifest"/>
+<link rel="stylesheet" href="styles-YAM2XBXA.css"></head>
 <body><script type="text/javascript" id="ng-event-dispatch-contract">(()=>{function p(t,n,r,o,e,i,f,m){return{eventType:t,event:n,targetElement:r,eic:o,timeStamp:e,eia:i,eirp:f,eiack:m}}function u(t){let n=[],r=e=>{n.push(e)};return{c:t,q:n,et:[],etc:[],d:r,h:e=>{r(p(e.type,e,e.target,t,Date.now()))}}}function s(t,n,r){for(let o=0;o<n.length;o++){let e=n[o];(r?t.etc:t.et).push(e),t.c.addEventListener(e,t.h,r)}}function c(t,n,r,o,e=window){let i=u(t);e._ejsas||(e._ejsas={}),e._ejsas[n]=i,s(i,r),s(i,o,!0)}window.__jsaction_bootstrap=c;})();
 </script>
-  <app-root></app-root>
-<script src="main-I6Q445KS.js" type="module"></script></body>
+    <app-root></app-root>
+<script src="main-HKPJWZ62.js" type="module"></script></body>
 </html>
 `;

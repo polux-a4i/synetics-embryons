@@ -1,0 +1,18 @@
+$mobile: 1000px;
+$tablet: 860px;
+$desktop: 1400px;
+
+$config: (
+    'xs': (
+        'max': $mobile,
+    ),
+    'sm': (
+        'min': $tablet,
+    ),
+    'md': (
+        'min': $mobile,
+    ),
+    'lg': (
+        'min': $desktop,
+    ),
+);

@@ -1,0 +1,311 @@
+@use "sass:map";
+@use '../breakpoints';
+
+// Enables simple flex layouts or complex grids
+$do-flex: true;
+$do-grid: true;
+$do-responsive-order: false;
+$do-responsive-gaps: false;
+
+// Grid options
+$complex-grid: true; // Enables start and end positionning for single items
+$container-w: 1300px !default;
+$columns: 12 !default;
+$rows: 12 !default;
+$grid-gap: 1rem !default;
+$padding: 0 1.6rem !default;
+
+// Flex options
+$flex-gap: 0 !default;
+
+@mixin box-layouts($grid-layout: false) {
+    &.align {
+        &-center {
+            align-items: center;
+        }
+
+        &-stretch {
+            align-items: stretch;
+        }
+
+        &-end {
+            align-items: flex-end;
+        }
+    }
+
+    @if $grid-layout {
+        &.justify {
+            &-center {
+                justify-items: center;
+            }
+
+            &-around {
+                justify-items: space-around;
+            }
+
+            &-between {
+                justify-items: space-between;
+            }
+
+            &-evenly {
+                justify-items: space-evenly;
+            }
+        }
+    } @else {
+        &.justify {
+            &-center {
+                justify-content: center;
+            }
+
+            &-around {
+                justify-content: space-around;
+            }
+
+            &-between {
+                justify-content: space-between;
+            }
+
+            &-evenly {
+                justify-content: space-evenly;
+            }
+        }
+    }
+
+    &.gap {
+        @for $i from 0 through 8 {
+            &-#{$i} {
+                gap: $grid-gap * calc($i / 2);
+            }
+        }
+    }
+
+    .order-1 {
+        order: 1;
+    }
+
+    .order-2 {
+        order: 2;
+    }
+
+    .order-3 {
+        order: 3;
+    }
+
+    @each $bp, $value in breakpoints.$config {
+        $bp-min: map.get($value, 'min');
+        $bp-max: map.get($value, 'max');
+
+        @if $bp-min {
+            @media screen and (width >= $bp-min) {
+                @if $do-responsive-order {
+                    .#{$bp}\:order-1 {
+                        order: 1;
+                    }
+                    .#{$bp}\:order-2 {
+                        order: 2;
+                    }
+                    .#{$bp}\:order-3 {
+                        order: 3;
+                    }
+                }
+
+                @if $do-responsive-gaps {
+                    &.#{$bp}\:gap {
+                        @for $i from 0 through 4 {
+                            &-#{$i} {
+                                gap: $grid-gap * $i;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        @if $bp-max {
+            @media screen and (width < $bp-max) {
+                @if $do-responsive-order {
+                    .#{$bp}\:order-1 {
+                        order: 1;
+                    }
+                    .#{$bp}\:order-2 {
+                        order: 2;
+                    }
+                    .#{$bp}\:order-3 {
+                        order: 3;
+                    }
+                }
+
+                @if $do-responsive-gaps {
+                    &.#{$bp}\:gap {
+                        @for $i from 0 through 4 {
+                            &-#{$i} {
+                                gap: $grid-gap * $i;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.container {
+    max-width: $container-w;
+    margin: 0 auto;
+    padding: $padding;
+}
+
+@if $do-grid {
+    .grid {
+        display: grid;
+        gap: $grid-gap;
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(0, 1fr));
+
+        @include box-layouts($grid-layout: true);
+
+        .self-start {
+            align-self: flex-start;
+        }
+
+        .self-center {
+            align-self: center;
+        }
+
+        .self-end {
+            align-self: flex-end;
+        }
+
+        &.gap {
+            @for $i from 1 through 4 {
+                &-#{$i} {
+                    gap: $grid-gap * $i;
+                }
+            }
+        }
+
+        @for $col from 1 through $columns {
+            &.#{"grid-cols-" + $col} {
+                grid-template-columns: repeat($col, minmax(0, 1fr));
+            }
+
+            .#{"col-" + $col} {
+                grid-column: span $col / span $col;
+            }
+
+            @if $complex-grid {
+                .#{"col-start-" + $col} {
+                    grid-column-start: $col;
+                }
+
+                .#{"col-end-" + $col} {
+                    grid-column-end: $col + 1;
+                }
+            }
+        }
+
+        @for $row from 1 through $rows {
+            &.#{"grid-rows-" + $row} {
+                grid-template-rows: repeat($row, minmax(0, 1fr));
+            }
+
+            .#{"row-" + $row} {
+                grid-row: span $row / span $row;
+            }
+
+            @if $complex-grid {
+                .#{"row-start-" + $row} {
+                    grid-row-start: $row;
+                }
+
+                .#{"row-end-" + $row} {
+                    grid-row-end: $row + 1;
+                }
+            }
+        }
+
+        @each $bp, $value in breakpoints.$config {
+            $bp-min: map.get($value, 'min');
+            $bp-max: map.get($value, 'max');
+
+            @if $bp-min {
+                @media screen and (width >= $bp-min) {
+                    @for $row from 1 through $rows {
+                        &.#{$bp}\:#{"grid-rows-" + $row} {
+                            grid-template-rows: repeat($row, minmax(0, 1fr));
+                        }
+
+                        .#{$bp}\:#{"row-" + $row} {
+                            grid-row: span $row / span $row;
+                        }
+
+                        @if $complex-grid {
+                            .#{$bp}\:#{"row-start-" + $row} {
+                                grid-row-start: $row;
+                            }
+
+                            .#{$bp}\:#{"row-end-" + $row} {
+                                grid-row-end: $row + 1;
+                            }
+                        }
+                    }
+
+                    @for $col from 1 through $columns {
+                        &.#{$bp}\:#{"grid-cols-" + $col} {
+                            grid-template-columns: repeat($col, minmax(0, 1fr));
+                        }
+
+                        .#{$bp}\:#{"col-" + $col} {
+                            grid-column: span $col / span $col;
+                        }
+
+                        @if $complex-grid {
+                            .#{$bp}\:#{"col-start-" + $col} {
+                                grid-column-start: $col;
+                            }
+
+                            .#{$bp}\:#{"col-end-" + $col} {
+                                grid-column-end: $col + 1;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @if $bp-max {
+                @media screen and (width < $bp-max) {
+                    @for $row from 1 through $rows {
+                        @for $row from 1 through $rows {
+                            &.#{$bp}\:#{"grid-rows-" + $row} {
+                                grid-template-rows: repeat($row, minmax(0, 1fr));
+                            }
+
+                            .#{$bp}\:#{"row-" + $row} {
+                                grid-row: span $row / span $row;
+                            }
+                        }
+
+                        @for $col from 1 through $columns {
+                            &.#{$bp}\:#{"grid-cols-" + $col} {
+                                grid-template-columns: repeat($col, minmax(0, 1fr));
+                            }
+
+                            .#{$bp}\:#{"col-" + $col} {
+                                grid-column: span $col / span $col;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@if $do-flex {
+    .flex {
+        display: flex;
+        gap: $flex-gap;
+
+        @include box-layouts;
+    }
+}

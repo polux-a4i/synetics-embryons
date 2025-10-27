@@ -1,0 +1,25 @@
+@layer primeng {
+    .p-card {
+        --icon-size: 4.75rem;
+
+        position: relative;
+
+        &:has(.card-icon) {
+            padding-top: calc((var(--icon-size) / 2) - var(--p-card-body-padding));
+        }
+
+        .card-icon {
+            position: absolute;
+            top: calc(var(--icon-size) * -1 / 2);
+            left: 50%;
+            transform: translateX(-50%);
+            width: var(--icon-size);
+            height: var(--icon-size);
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background-color: var(--p-content-background);
+        }
+    }
+}

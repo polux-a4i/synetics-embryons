@@ -1,0 +1,36 @@
+:root {
+    --form-invalid: var(--p-form-field-invalid-placeholder-color);
+    --form-valid: #26AD60;
+}
+
+.form-group {
+    label,
+    .form-label {
+        display: block;
+        margin-bottom: .5rem;
+    }
+}
+
+.form-checkbox {
+    display: flex;
+    align-items: center;
+    gap: .75ch;
+
+    label,
+    .form-label {
+        cursor: pointer;
+    }
+}
+
+.field-valid {
+    --p-inputtext-border-color: var(--form-valid);
+    --p-select-border-color: var(--form-valid);
+}
+
+.form-tooltip {
+    font-style: italic;
+
+    &.error {
+        color: var(--p-form-field-invalid-placeholder-color);
+    }
+}

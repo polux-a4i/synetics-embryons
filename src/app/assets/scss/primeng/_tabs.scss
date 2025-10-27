@@ -1,0 +1,69 @@
+@use '../media';
+
+@layer primeng {
+    .p-tabs {
+        @include media.sm {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            gap: .5rem;
+        }
+    }
+
+    @include media.xs {
+        .p-tablist {
+            margin-inline: -1.6rem !important;
+            margin-bottom: 1.6rem !important;
+        }
+    }
+
+    .p-tablist-tab-list {
+        width: fit-content;
+        flex-flow: row;
+        gap: 2px;
+
+        @include media.sm {
+            flex-flow: column;
+            gap: .5rem;
+        }
+    }
+
+    .p-tabpanels {
+        @include media.sm {
+            border-radius: 0 3rem 0 0;
+        }
+    }
+
+    .p-tab {
+        opacity: .6;
+
+        @include media.sm {
+            border-radius: .5rem 0 0 .5rem;
+        }
+
+        &.p-tab-valid {
+            position: relative;
+
+            --p-tabs-tab-padding: 1rem 2.5rem 1rem 1.125rem;
+
+            &::after {
+                font-family: picon;
+                content: "\e922";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                right: .75rem;
+                font-size: 1.5em;
+                color: var(--form-valid);
+            }
+        }
+    }
+
+    .p-tab-active,
+    .p-tab:hover {
+        opacity: 1;
+    }
+
+    .p-tab.p-disabled {
+        color: var(--p-surface-300)
+    }
+}

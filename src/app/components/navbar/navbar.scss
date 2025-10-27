@@ -1,0 +1,110 @@
+@use '../../assets/scss/media';
+
+@include media.xs {
+    .logo {
+        width: 8rem;
+    }
+}
+
+nav {
+    padding-inline: 4rem;
+    padding-block: 2rem;
+
+    @include media.xs {
+        padding-inline: 0;
+        padding-block: 1.6rem;
+    }
+
+    &:not(.has-bg) {
+        position: fixed;
+        top: 0;
+        inset-inline: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
+    &.has-bg {
+        color: var(--p-surface-0);
+        background-color: var(--p-primary-800);
+    }
+
+    .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.6rem;
+    }
+}
+
+menu {
+    font-size: .95em;
+    font-weight: 600;
+
+    li {
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &.active {
+                text-decoration: underline;
+                text-decoration-color: var(--p-primary-400);
+                text-underline-offset: .2rem;
+                pointer-events: none;
+            }
+
+            &:hover,
+            &:focus-visible {
+                text-decoration: underline;
+                text-decoration-color: var(--p-surface-0);
+                text-decoration-thickness: .2rem;
+            }
+        }
+    }
+}
+
+menu.desktop,
+menu.settings {
+    display: flex;
+    gap: 1.5rem;
+}
+
+menu.mobile {
+    display: grid;
+    gap: .5rem;
+    margin-block: 5rem 2.5rem;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: .75ch;
+
+        &::before {
+            display: block;
+            font-family: picon;
+            content: '\e901';
+            font-size: 80%;
+        }
+    }
+}
+
+.mobile-header {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .5rem;
+}
+
+menu.settings {
+    gap: .5rem;
+
+    .picon {
+        font-size: 1.2em;
+    }
+}
+
+.side-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

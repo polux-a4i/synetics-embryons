@@ -1,0 +1,33 @@
+@use 'assets/scss/media';
+
+.app-wrapper {
+    height: 100dvh;
+    height: 100vh;
+
+    .app-main ::ng-deep router-outlet + * {
+        display: block;
+
+        #page-content {
+            min-height: 100dvh;
+            min-height: 100vh;
+            padding-bottom: 2rem;
+
+            @include media.sm {
+                padding-top: 2rem;
+            }
+
+            &:not(.bg-image) {
+                background-image: linear-gradient(
+                    145deg,
+                    var(--p-primary-100) 0%,
+                    var(--p-primary-100) 15%,
+                    var(--p-primary-50) 25%,
+                    var(--p-primary-50) 50%,
+                    var(--p-primary-50) 75%,
+                    var(--p-primary-100) 85%,
+                    var(--p-primary-100) 100%
+                );
+            }
+        }
+    }
+}

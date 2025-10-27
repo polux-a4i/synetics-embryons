@@ -1,0 +1,17 @@
+@layer primeng {
+    .p-autocomplete.p-inputwrapper {
+        position: relative;
+
+        &::after {
+            display: block;
+            font-family: picon;
+            content: '\e924';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: var(--p-inputtext-padding-x);
+            opacity: .75;
+            pointer-events: none;
+        }
+    }
+}

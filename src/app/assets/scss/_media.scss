@@ -1,0 +1,35 @@
+@use './breakpoints' as bp;
+
+@mixin lg {
+    @media screen and (width >= bp.$desktop) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (width >= bp.$tablet) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (width >= bp.$mobile) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (width < bp.$mobile) {
+        @content;
+    }
+}
+
+/**
+* Targets ONLY Mobile Safari
+* @link https://github.com/polux-a4i/samsic-instant-wp/blob/dev/public/wp-content/themes/instant/src/scss/blocks/_timeline.scss#L38C1-L41C14
+*/
+@mixin safari {
+    @supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none) {
+        @content;
+    }
+}

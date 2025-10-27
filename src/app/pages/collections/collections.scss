@@ -1,0 +1,37 @@
+@use '../../assets/scss/media';
+
+.tab-header {
+    margin-bottom: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+fieldset {
+    row-gap: 2.25rem;
+    column-gap: 1.25rem;
+
+    &:not(:last-of-type) {
+        margin-bottom: 3.5rem;
+    }
+}
+
+.c-footer,
+.c-dialog-footer {
+    .c-nav {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 1rem;
+
+        menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+    }
+}
+
+.c-footer {
+    margin-top: 2.25rem;
+}

@@ -1,0 +1,9 @@
+Require all denied
+
+# Cf https://api.github.com/meta $.hooks
+Require ip 192.30.252.0/22
+Require ip 185.199.108.0/22
+Require ip 140.82.112.0/20
+Require ip 143.55.64.0/20
+Require ip 2a0a:a440::/29
+Require ip 2606:50c0::/32

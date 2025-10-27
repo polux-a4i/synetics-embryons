@@ -1,0 +1,40 @@
+@if (!hideLayout) {
+    <footer class="footer">
+        <div class="container">
+            <div class="nav-inner">
+                <div class="logo">
+                    <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.0779 0C13.9387 0 11.7604 0.532337 11.7604 0.532337V9.77033C11.7604 9.77033 14.8205 8.10191 16.4329 8.10191H31.01C41 8.10191 41 0 41 0H17.0779ZM10.2335 0.792014V12.2308C10.2335 14.6133 13.1358 16.2817 15.63 16.2817C18.1242 16.2817 22.5599 16.2817 26.5019 16.2817C31.214 16.2817 41 19.8912 41 28.6488C41 36.2444 31.9379 40.4316 26.0149 40.4316H0V38.523C0 35.6082 2.83644 32.4271 7.62745 32.4271H25.2976C28.2525 32.3752 30.6941 30.908 30.6941 28.2853C30.6941 26.0456 28.4302 24.3122 26.1005 24.3122H14.3401C12.9844 24.3122 0 22.7607 0 11.8413C0 8.13437 3.19181 2.85644 10.2335 0.792014Z" fill="white"/>
+                    </svg>
+                </div>
+
+                <menu>
+                    <li>
+                        <a routerLink="/gcu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Legal Notice & GCU
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/my-data" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Personal Data
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLink="/cookies" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                            Cookie Policy
+                        </a>
+                    </li>
+                </menu>
+
+                <div>
+                    <p-button
+                        size="large"
+                        label="Contact"
+                        variant="outlined"
+                        severity="secondary"
+                    />
+                </div>
+            </div>
+        </div>
+    </footer>
+}
